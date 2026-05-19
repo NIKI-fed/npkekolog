@@ -1,0 +1,8 @@
+/* Подключение вариативного шрифта Montserrat */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat_wght_.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}

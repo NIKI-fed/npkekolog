@@ -1,0 +1,20 @@
+/* Base */
+@import url('base/fonts.css');
+@import url('base/common.css');
+
+/* Sections */
+@import url('sections/header.css');
+@import url('sections/hero.css');
+@import url('sections/activity.css');
+@import url('sections/objects.css');
+@import url('sections/contacts.css');
+@import url('sections/site-map.css');
+@import url('sections/footer.css');
+
+@import url('sections/section.css');
+
+/* Components */
+@import url('components/button.css');
+@import url('components/cookies.css');
+@import url('components/legal-page.css');
+@import url('components/modal.css');

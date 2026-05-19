@@ -1,0 +1,142 @@
+/* ---------- HEADER ---------- */
+.header__main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    padding-top: 30px;
+}
+
+.header__page {
+    position: sticky;
+    /* top: 0;
+    left: 0; */
+    background-color: #34353E;
+    width: 100%;
+    z-index: 3;
+    padding-block: 30px;
+}
+
+.header__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ---------- Верхняя строка ---------- */
+.header__top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.header__logo a {
+    display: block;
+    height: 70px;
+}
+
+.header__logo img {
+    height: 100%;
+    width: auto;
+}
+
+/* Контакты */
+.header__contacts {
+    display: flex;
+    gap: 40px;
+}
+
+.header__contact-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header__contact-item a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+    letter-spacing: 5%;
+    transition: all 0.3s ease;
+}
+
+.header__contact-item a:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.header__contact-icon {
+    width: 28px;
+    filter: invert(100%);
+}
+
+/* ---------- Нижняя строка (навигация) ---------- */
+.header__bottom {
+    /* margin-bottom: 0; */
+}
+
+.header__bottom .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav {
+    display: flex;
+    gap: 50px;
+}
+
+.header__nav a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+    position: relative;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.header__nav a:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+/* Три полоски (бургер для карты сайта) */
+.header__menu {
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.header__menu:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.header__menu span {
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: #ffffff;
+    margin: 8px 0;
+}
+
+.header__menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.header__menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.header__menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}

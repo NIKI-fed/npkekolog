@@ -1,0 +1,115 @@
+/* ---------- HERO СЛАЙДЕР ---------- */
+.hero {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: grab;
+    position: relative;
+}
+
+.hero__background {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/assets/backgrounds/0.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero:active {
+    cursor: grabbing;
+}
+
+.hero__track {
+    display: flex;
+    z-index: 1;
+    height: 100%;
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero__slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Фоновые изображения */
+.hero__slide:nth-child(1) {
+    background-image: url('/assets/backgrounds/1.jpg');
+}
+
+.hero__slide:nth-child(2) {
+    background-image: url('/assets/backgrounds/2.jpg');
+}
+
+.hero__slide:nth-child(3) {
+    background-image: url('/assets/backgrounds/3.jpg');
+}
+
+.hero__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    z-index: 2;
+    width: 100%;
+    max-width: 1440px;
+    padding: clamp(5rem, 24.375rem + -25vw, 1.875rem);
+}
+
+/* @media (max-width: 1240px) {
+    .hero__text {
+        padding: clamp(5rem, 24.375rem + -25vw, 1.875rem);
+    }
+} */
+
+.hero__title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero__description {
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+/* Стрелки */
+.hero__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 60px;
+    cursor: pointer;
+    z-index: 4;
+    transition: color 0.2s;
+    font-family: monospace;
+}
+
+.hero__arrow:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero__arrow--prev {
+    left: 20px;
+}
+
+.hero__arrow--next {
+    right: 20px;
+}

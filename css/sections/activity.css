@@ -1,0 +1,94 @@
+.activity {
+    width: 100%;
+}
+
+.activity__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+}
+
+.activity__card {
+    position: relative;
+    height: 600px;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Псевдоэлемент для фонового изображения */
+.activity__card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+/* 1-я карточка */
+.activity__card:nth-child(1) {
+    background-color: #237fae;
+}
+
+.activity__card:nth-child(1)::before {
+    background-image: url('/assets/backgrounds/4.jpg');
+}
+
+/* 2-я карточка */
+.activity__card:nth-child(2) {
+    background-color: #108982;
+}
+
+.activity__card:nth-child(2)::before {
+    background-image: url('../../assets/backgrounds/5.jpg');
+}
+
+/* 3-я карточка */
+.activity__card:nth-child(3) {
+    background-color: #33AEC0;
+}
+
+.activity__card:nth-child(3)::before {
+    background-image: url('../../assets/backgrounds/6.jpg');
+}
+
+.activity__card:hover::before {
+    transform: scale(1.1);
+}
+
+/* Текстовый блок*/
+.activity__card-text {
+    position: relative;
+    color: #ffffff;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 70px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.activity__card-title {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+.activity__card-description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.4;
+}

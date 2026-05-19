@@ -1,0 +1,185 @@
+.contacts {
+    padding: 50px;
+    background: #f8f9fa;
+}
+
+.contacts__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.contacts__map {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.contacts__map-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Маркер поверх карты */
+.contacts__marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none; /* чтобы маркер не мешал кликать по карте */
+}
+
+.contacts__marker img {
+    width: 70px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    animation: markerPulse 2s ease infinite;
+}
+
+@keyframes markerPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Правая часть (контакты) */
+.contacts__description {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contacts__description h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a2c3e;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contacts__description h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #1a6b5e;
+    border-radius: 2px;
+}
+
+.contacts__description h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a6b5e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    padding-top: 0;
+    line-height: 1.3;
+}
+
+.contacts__description p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+    padding-left: 0;
+}
+
+.contacts__description a {
+    font-weight: 600;
+    font-size: 18px;
+    color: #1a2c3e;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    padding: 8px 0;
+}
+
+.contacts__description a:hover {
+    color: #1a6b5e;
+    transform: translateX(5px);
+}
+
+/* Карточки для адресов (опционально) */
+.contacts__address-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contacts__address-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.contacts__address-card h4 {
+    margin-top: 0;
+}
+
+.contacts__address-card p {
+    margin-bottom: 0;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+    .contacts {
+        padding: 40px;
+    }
+    
+    .contacts__inner {
+        gap: 40px;
+    }
+    
+    .contacts__description h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        padding: 30px;
+    }
+    
+    .contacts__inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contacts__map {
+        height: 400px;
+    }
+    
+    .contacts__marker img {
+        width: 50px;
+    }
+    
+    .contacts__description h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .contacts__description {
+        text-align: center;
+    }
+    
+    .contacts__description a:hover {
+        transform: translateY(-2px);
+    }
+}
