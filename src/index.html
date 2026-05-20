@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <link rel="preload" href="/fonts/Montserrat_wght_.woff" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+
+    <body>
+        <main>
+            <header class="header__main">
+                <div class="header__top">
+                    <div class="header__container">
+                        <div class="header__logo">
+                            <a href="/index.html">
+                                <img src="/assets/icons/logo_main.png" alt="Логотип">
+                            </a>
+                        </div>
+            
+                        <div class="header__contacts">
+                            <div class="header__contact-item">
+                                <img class="header__contact-icon" src="/assets/icons/icon-mail.png" alt="Email">
+                                <a href="mailto:info@npkekolog.ru">info@npkekolog.ru</a>
+                            </div>
+                            <div class="header__contact-item">
+                                <img class="header__contact-icon" src="/assets/icons/icon-call.png" alt="Телефон">
+                                <a href="tel:+79111560905">8 (911) 156-09-05</a>
+                            </div>
+                        </div>
+            
+                        <button class="header__callback-btn" data-modal-open>Позвоните нам</button>
+                    </div>
+                </div>
+            
+                <div class="header__bottom">
+                    <div class="header__container">
+                        <nav class="header__nav">
+                            <a href="#activity" class="nav-link nav-link--activity">Продукты и решения</a>
+                            <a href="#objects" class="nav-link nav-link--objects">Объекты</a>
+                            <a href="#contacts" class="nav-link nav-link--about">Контакты</a>
+                        </nav>
+            
+                        <div class="header__menu" id="siteMapBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                
+            </header>
+
+            <!-- HERO СЛАЙДЕР -->
+            <section class="hero" id="hero">
+                <div class="hero__background"> </div>
+                <div class="hero__track" id="heroTrack">
+                    <div class="hero__slide">
+                        <div class="hero__text">
+                            <h1 class="hero__title">с нами мир становится чище</h1>
+                            <p class="hero__description">Более 30 лет мы занимаемся вопросами водоподготовки</p>
+                        </div>
+                    </div>
+                    <div class="hero__slide">
+                        <div class="hero__text">
+                            <h1 class="hero__title">наша миссия — чистая вода</h1>
+                            <p class="hero__description">Мы производим и внедряем оборудование для обеззараживания воды</p>
+                        </div>
+                    </div>
+                    <div class="hero__slide">
+                        <div class="hero__text">
+                            <h1 class="hero__title">с нами работать легко!</h1>
+                            <p class="hero__description">Проектируем, производим, автоматизируем</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="hero__arrow hero__arrow--prev" id="heroPrev">〈</button>
+                <button class="hero__arrow hero__arrow--next" id="heroNext">〉</button>
+            </section>
+
+            <!-- Секция НАША ДЕЯТЕЛЬНОСТЬ -->
+            <section id="activity" class="activity">
+                <div class="activity__inner">
+    
+                    <a href="/technologies/index.html" class="activity__card">
+                        <div class="activity__card-text">
+                            <h1 class="activity__card-title">технологии</h1>
+                            <p class="activity__card-description">Мы запатентовали свою собственную технологию по получению гипохлорита натрия, не имеющую аналогов в мире</p>
+                        </div>
+                    </a>
+    
+                    <a href="equipment.html" class="activity__card">
+                        <div class="activity__card-text">
+                            <h1 class="activity__card-title">оборудование</h1>
+                            <p class="activity__card-description">В нашем арсенале десятки видов установок, вариаций оборудования для решения различного рода задач и достижения целей</p>
+                        </div>
+                    </a>
+    
+                    <a href="services.html" class="activity__card">
+                        <div class="activity__card-text">
+                            <h1 class="activity__card-title">услуги</h1>
+                            <p class="activity__card-description">Монтируем, обслуживаем, консультируем</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="objects" id="objects">
+                <div class="objects__inner">
+                    <h2>выполненные объекты</h2>
+                    <div class="objects__map">
+                        <img class="objects__map-img" src="/assets/images/object_map_1.png">
+                    </div>
+                    <a href="objects.html" class="objects__link">Смотреть все объекты</a>
+                </div>
+            </section>
+
+            <section class="contacts" id="contacts">
+                <div class="contacts__inner">
+
+                    <div class="contacts__map-wrapper">
+                        <iframe class="contacts__map"
+                            src="https://yandex.ru/map-widget/v1/?ll=30.3981,59.9855&z=16&pt=30.3986,59.9852,pm2rdm&scroll=false"
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                        
+                        <!-- Указатель с логотипом поверх карты -->
+                        <div class="contacts__marker">
+                            <img src="assets/icons/logo_512.png" alt="Локация">
+                        </div>
+                    </div>
+
+                    <div class="contacts__description">
+                        <h3>Контактная информация:</h3>
+                        <h4>Юридический адрес:</h4>
+                        <p>195271, Россия, г.&nbsp;Санкт-Петербург, Кондратьевский&nbsp;пр.&nbsp;72, литера&nbsp;А, пом.&nbsp;30Н, комн.&nbsp;30</p>
+                        <h4>Почтовый адрес:</h4>
+                        <p>195271, Россия, г.&nbsp;Санкт-Петербург, ул.&nbsp;Замшина&nbsp;27, литера&nbsp;А, корп.&nbsp;1, а/я&nbsp;7</p>
+                        <h4>E-mail:</h4>
+                        <a href="mailto:info@npkekolog.ru">info@npkekolog.ru</a>
+                        <h4>Телефон:</h4>
+                        <a href="tel:+79111560905">8 (911) 156-09-05</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Используем партиалы Vite + vite-plugin-html-include-->
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/site_map.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

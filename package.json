@@ -1,0 +1,27 @@
+{
+  "name": "npkekolog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NIKI-fed/npkekolog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NIKI-fed/npkekolog/issues"
+  },
+  "homepage": "https://github.com/NIKI-fed/npkekolog#readme",
+  "devDependencies": {
+    "vite": "^6.4.2",
+    "vite-plugin-html-include": "^1.5.2"
+  }
+}
