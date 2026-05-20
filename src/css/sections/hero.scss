@@ -1,3 +1,5 @@
+@use '../base/variables' as *;
+
 /* ---------- HERO СЛАЙДЕР ---------- */
 .hero {
     width: 100%;
@@ -62,18 +64,12 @@
     z-index: 2;
     width: 100%;
     max-width: 1440px;
-    padding: clamp(5rem, 24.375rem + -25vw, 1.875rem);
+    padding: 150px;
 }
-
-/* @media (max-width: 1240px) {
-    .hero__text {
-        padding: clamp(5rem, 24.375rem + -25vw, 1.875rem);
-    }
-} */
 
 .hero__title {
     font-weight: 700;
-    font-size: 38px;
+    font-size: clamp(1.5rem, 1.142rem + 1.5909vw, 2.375rem);
     line-height: 1.2;
     text-transform: uppercase;
     margin-bottom: 30px;
@@ -112,4 +108,51 @@
 
 .hero__arrow--next {
     right: 20px;
+}
+
+
+
+@media (max-width: 1800px) {
+    .hero {
+        height: clamp(46.875rem, 21.875rem + 27.7778vw, 53.125rem);
+    }
+}
+
+@media (max-width: 1440px) {
+    .hero {
+        height: 750px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .hero__text {
+        width: 70%;
+        left: 35%;
+        // padding: 140px;
+    }
+    .hero__slide {
+        background-size: contain;
+        
+    }
+    .hero {
+        height: 550px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero__text {
+        width: 75%;
+        left: 30%;
+        // top: 60%;
+        // padding: 140px;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero__text {
+        width: 75%;
+        left: 30%;
+        top: 55%;
+        // padding: 140px;
+    }
 }

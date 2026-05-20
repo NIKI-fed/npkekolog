@@ -1,0 +1,50 @@
+@use '../base/variables' as *;
+
+.footer {
+    background: $color-header-footer;
+    color: #90a3b2;
+    padding: 48px 0 24px;
+}
+
+.footer__inner {
+    padding-inline: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer__links {
+    display: flex;
+    gap: 32px;
+}
+
+.footer__links a {
+    color: #90a3b2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer__links a:hover {
+    color: white;
+}
+
+@media (max-width: 1240px) {
+    .footer__inner {
+        padding-inline: clamp(0.625rem, -2.9545rem + 15.9091vw, 9.375rem);
+    }
+}
+
+@media (max-width: 800px) {
+    .footer__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__links {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: end;
+    }
+}

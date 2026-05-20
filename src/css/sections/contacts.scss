@@ -1,3 +1,5 @@
+@use '../base/variables' as *;
+
 .contacts {
     padding: 50px;
     background: #f8f9fa;
@@ -75,14 +77,14 @@
     left: 0;
     width: 50px;
     height: 3px;
-    background: #1a6b5e;
+    background: $color-green;
     border-radius: 2px;
 }
 
 .contacts__description h4 {
     font-size: 16px;
     font-weight: 700;
-    color: #1a6b5e;
+    color: $color-green;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 20px;
@@ -110,11 +112,11 @@
 }
 
 .contacts__description a:hover {
-    color: #1a6b5e;
+    color: $color-green;
     transform: translateX(5px);
 }
 
-/* Карточки для адресов (опционально) */
+/* Карточки для адресов */
 .contacts__address-card {
     background: #ffffff;
     border-radius: 12px;

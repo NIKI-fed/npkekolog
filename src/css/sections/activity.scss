@@ -1,3 +1,5 @@
+@use '../base/variables' as *;
+
 .activity {
     width: 100%;
 }
@@ -36,7 +38,7 @@
 
 /* 1-я карточка */
 .activity__card:nth-child(1) {
-    background-color: #237fae;
+    background-color: $color-activity-1;
 }
 
 .activity__card:nth-child(1)::before {
@@ -45,7 +47,7 @@
 
 /* 2-я карточка */
 .activity__card:nth-child(2) {
-    background-color: #108982;
+    background-color: $color-activity-2;
 }
 
 .activity__card:nth-child(2)::before {
@@ -54,7 +56,7 @@
 
 /* 3-я карточка */
 .activity__card:nth-child(3) {
-    background-color: #33AEC0;
+    background-color: $color-activity-3;
 }
 
 .activity__card:nth-child(3)::before {
@@ -91,4 +93,27 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 1.4;
+}
+
+@media (max-width: 1240px) {
+    .activity__inner {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .activity__card {
+        height: clamp(18.75rem, 2.2059rem + 73.5294vw, 37.5rem);
+    }
+
+    .activity__card-text {
+        padding: clamp(2.5rem, 0.2941rem + 9.8039vw, 5rem) clamp(2.5rem, 0.8456rem + 7.3529vw, 4.375rem);
+    }
+
+    .activity__card-title {
+        font-size: clamp(1.5rem, 1.0588rem + 1.9608vw, 2rem);
+        margin-bottom: clamp(0.9375rem, -0.1654rem + 4.902vw, 2.1875rem);
+    }
+
 }

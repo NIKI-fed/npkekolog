@@ -1,0 +1,24 @@
+/* Base */
+@use 'base/variables' as *;
+@use 'base/fonts';
+@use 'base/common';
+
+/* Партиалы (шапка, подвал, карта сайта) */
+@use 'sections/header';
+@use 'sections/footer';
+@use 'sections/site-map';
+
+/* Основные секции главной страницы */
+@use 'sections/hero';
+@use 'sections/activity';
+@use 'sections/objects';
+@use 'sections/contacts';
+
+/* Дополнительные страницы */
+@use 'sections/legal-page';
+@use 'sections/section';
+
+/* Компоненты */
+@use 'components/button';
+@use 'components/cookies';
+@use 'components/modal';

@@ -1,0 +1,230 @@
+@use '../base/variables' as *;
+
+.header__main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    padding-top: 30px;
+}
+
+.header__page {
+    position: sticky;
+    background-color: $color-header-footer;
+    width: 100%;
+    z-index: 3;
+    padding-block: 30px;
+}
+
+.header__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ---------- Верхняя строка ---------- */
+.header__top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.header__logo {
+    a {
+        display: block;
+        height: 70px;
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+/* Контакты */
+.header__contacts {
+    display: flex;
+    gap: 40px;
+}
+
+.header__contact-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    a {
+        font-size: 18px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.2s;
+        letter-spacing: 5%;
+        transition: all 0.3s ease;
+
+        &:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.header__contact-icon {
+    width: 28px;
+    filter: invert(100%);
+}
+
+/* ---------- Нижняя строка (навигация) ---------- */
+.header__bottom {
+    .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header__nav {
+    display: flex;
+    gap: 50px;
+
+    a {
+        font-size: 18px;
+        font-weight: 500;
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        transition: opacity 0.2s;
+        position: relative;
+        padding-bottom: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+/* Три полоски (бургер для карты сайта) */
+.header__menu {
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+
+    span {
+        display: block;
+        width: 34px;
+        height: 2px;
+        background: #ffffff;
+        margin: 8px 0;
+    }
+
+    &.active {
+        span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+    }
+}
+
+/* Адаптив */
+
+@media (max-width: 1700px) {
+    .header__container {
+        max-width: clamp(31.25rem, -0.7955rem + 85.4545vw, 90rem);
+    }
+}
+
+@media (max-width: 1240px) {
+
+    .header__container {
+        flex-wrap: wrap;
+    }
+
+    .header__contacts {
+        gap: clamp(1.5625rem, 0.625rem + 1.5625vw, 1.875rem);
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+    }
+
+    .header__contact-icon {
+        width: clamp(1.125rem, 0.8804rem + 1.087vw, 1.75rem);
+    }
+
+    .header__contact-item a {
+        font-size: clamp(0.875rem, 0.7772rem + 0.4348vw, 1.125rem);
+    }
+    
+    .header__logo a {
+        height: clamp(3.125rem, 2.6359rem + 2.1739vw, 4.375rem);
+    }
+    
+    // Нижняя часть хедера
+    
+    .header__nav {
+        gap: clamp(1.25rem, 0.483rem + 3.4091vw, 3.125rem);
+    }
+
+    .header__nav a {
+        font-size: clamp(0.875rem, 0.7727rem + 0.4545vw, 1.125rem);
+    }
+
+    .header__menu span {
+        width: clamp(1.5rem, 1.2443rem + 1.1364vw, 2.125rem);
+        margin: clamp(0.3125rem, 0.2358rem + 0.3409vw, 0.5rem) 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .header__container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header__contacts {
+        gap: clamp(0.625rem, -3.75rem + 16.6667vw, 2.5rem);
+        order: 0;
+        margin-top: 10px;
+    }
+
+    .header__bottom .header__container {
+        flex-direction: row;
+        width: 80%;
+        gap: 40px;
+    }
+
+    .header__nav {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        flex: 1;
+    }
+}
+
+@media (max-width: 400px) {
+    .header__contacts {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}

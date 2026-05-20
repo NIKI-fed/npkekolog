@@ -21,7 +21,11 @@
   },
   "homepage": "https://github.com/NIKI-fed/npkekolog#readme",
   "devDependencies": {
+    "sass": "^1.99.0",
     "vite": "^6.4.2",
     "vite-plugin-html-include": "^1.5.2"
+  },
+  "dependencies": {
+    "@typewe/montserrat": "^1.0.0"
   }
 }
