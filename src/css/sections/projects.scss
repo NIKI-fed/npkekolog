@@ -1,0 +1,168 @@
+@use '../base/variables' as *;
+
+.projects {
+    max-width: 1200px;
+    margin: auto;
+
+    &__inner {
+        width: 100%;
+        padding: 0 20px 50px;
+
+        h3 {
+            font-size: clamp(1.375rem, 0.8235rem + 2.451vw, 2rem);
+            margin-bottom: 16px;
+            text-align: center;
+            color: $color-header-footer;
+        }
+    }
+
+    &__subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: $color-green;
+        margin-bottom: 40px;
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    // Горизонтальная карточка
+    &__card {
+        display: flex;
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    // Круглая клетка 150×150px для герба
+    &__card-image {
+        flex-shrink: 0;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba($color-gray-dark, 0.08);
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 16px;
+        }
+    }
+
+    &__card-content {
+        flex: 1;
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__card-object {
+        font-weight: 700;
+        font-size: 18px;
+        color: $color-header-footer;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        line-height: 1.3;
+    }
+
+    &__card-power {
+        font-size: 14px;
+        color: $color-gray-dark;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        
+        span {
+            font-weight: 700;
+            color: $color-green;
+            font-size: 16px;
+        }
+    }
+
+    &__card-year {
+        font-size: 14px;
+        color: $color-gray-dark;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.8;
+    }
+
+    &__card-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+}
+
+// Адаптив: на мобилках карточка вертикальная
+@media (max-width: 768px) {
+    .projects {
+        &__inner {
+            padding: 0 16px 30px;
+            
+            h3 {
+                font-size: 24px;
+            }
+        }
+
+        &__subtitle {
+            font-size: 14px;
+        }
+
+        &__grid {
+            gap: 16px;
+        }
+
+        &__card {
+            flex-direction: column;
+        }
+
+        &__card-image {
+            width: 100%;
+            height: auto;
+            min-height: 120px;
+            
+            img {
+                width: 140px;
+                height: 140px;
+                padding: 12px;
+            }
+        }
+
+        &__card-content {
+            padding: 16px;
+        }
+
+        &__card-object {
+            font-size: 16px;
+        }
+
+        &__card-power {
+            font-size: 12px;
+            
+            span {
+                font-size: 14px;
+            }
+        }
+
+        &__card-year {
+            font-size: 12px;
+        }
+    }
+}

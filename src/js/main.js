@@ -1,6 +1,8 @@
 // Компоненты
 import './components/site-map.js'
 import './components/hero-slider.js'
+import './components/observer-animation.js'
+import './components/projects-render.js';
 
 import './modules/modal.js';
 import './modules/cookies.js';

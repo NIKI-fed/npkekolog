@@ -37,7 +37,7 @@
                             </div>
                         </div>
             
-                        <button class="header__callback-btn" data-modal-open>Позвоните нам</button>
+                        <button class="header__callback-btn" data-modal-open>Подобрать оборудование</button>
                     </div>
                 </div>
             
@@ -98,14 +98,14 @@
                         </div>
                     </a>
     
-                    <a href="equipment.html" class="activity__card">
+                    <a href="/equipment/index.html" class="activity__card">
                         <div class="activity__card-text">
                             <h1 class="activity__card-title">оборудование</h1>
                             <p class="activity__card-description">В нашем арсенале десятки видов установок, вариаций оборудования для решения различного рода задач и достижения целей</p>
                         </div>
                     </a>
     
-                    <a href="services.html" class="activity__card">
+                    <a href="/services/index.html" class="activity__card">
                         <div class="activity__card-text">
                             <h1 class="activity__card-title">услуги</h1>
                             <p class="activity__card-description">Монтируем, обслуживаем, консультируем</p>
@@ -117,10 +117,11 @@
             <section class="objects" id="objects">
                 <div class="objects__inner">
                     <h2>выполненные объекты</h2>
-                    <div class="objects__map">
-                        <img class="objects__map-img" src="/assets/images/object_map_1.png">
-                    </div>
-                    <a href="objects.html" class="objects__link">Смотреть все объекты</a>
+
+                    <!-- Выполненные объекты -->
+                    <include file="partials/projects_map.html"></include>
+
+                    <a href="/projects/" class="objects__link">Смотреть все объекты</a>
                 </div>
             </section>
 

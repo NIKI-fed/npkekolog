@@ -24,6 +24,7 @@ export default defineConfig({
                 technologies: 'src/technologies/index.html',
                 equipment: 'src/equipment/index.html',
                 services: 'src/services/index.html',
+                services: 'src/objects/index.html',
             }
         }
     }

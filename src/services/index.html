@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Услуги</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <!-- <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin> -->
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="section">
+                <div class="section__inner">
+                    <h2>услуги</h2>
+                    <ul class="section__menu">
+                        <li class="section__card section__card-width">
+                            <a href="/src/services/development.html" class="section__card">
+                                <div class="section__card-bg section__card-services"></div>
+                                <div class="section__card-overlay"></div>
+                                <span class="section__card-label">Разработка технологических решений</span>
+                            </a>
+                        </li>
+                        <li class="section__card section__card-width">
+                            <a href="/src/services/design.html" class="section__card">
+                                <div class="section__card-bg section__card-services"></div>
+                                <div class="section__card-overlay"></div>
+                                <span class="section__card-label">Проектирование</span>
+                            </a>
+                        </li>
+                        <li class="section__card section__card-width">
+                            <a href="/src/services/installation.html" class="section__card">
+                                <div class="section__card-bg section__card-services"></div>
+                                <div class="section__card-overlay"></div>
+                                <span class="section__card-label">Монтажные и пуско-наладочные работы</span>
+                            </a>
+                        </li>
+                        <li class="section__card section__card-width">
+                            <a href="/src/services/maintenance.html" class="section__card">
+                                <div class="section__card-bg section__card-services"></div>
+                                <div class="section__card-overlay"></div>
+                                <span class="section__card-label">Сервисное обслуживание</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="section__description">
+                        <p>ООО «НПК ЭКОЛОГ» обладает широким спектром технологий в области очистки и обеззараживания воды.</p>
+                        <p>Высокая квалификация специалистов компании позволяет решать задачи различной степени сложности в вопросах водоподготовки.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

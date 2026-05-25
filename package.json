@@ -26,6 +26,12 @@
     "vite-plugin-html-include": "^1.5.2"
   },
   "dependencies": {
+    "@fontsource-variable/geist": "^5.2.9",
+    "@fontsource-variable/golos-text": "^5.2.8",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/manrope": "^5.2.8",
+    "@fontsource-variable/nunito": "^5.2.7",
+    "@fontsource-variable/raleway": "^5.2.8",
     "@typewe/montserrat": "^1.0.0"
   }
 }

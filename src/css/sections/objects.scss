@@ -1,7 +1,10 @@
 @use '../base/variables' as *;
 
+// Блок объекты на главной
+
 .objects {
     width: 100%;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -44,6 +47,7 @@
 
 .objects__map-img {
     width: 100%;
+    max-width: 100%;
 }
 
 .objects__link {

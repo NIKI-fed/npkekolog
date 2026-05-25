@@ -1,6 +1,6 @@
 @use '../base/variables' as *;
 
-/* Кнопка "Позвоните нам" в хедере */
+/* Кнопка в хедере */
 .header__callback-btn {
     background: transparent;
     border: 1.5px solid #ffffff;
@@ -42,24 +42,18 @@
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
+    margin: auto;
 
     &:hover {
         background: #2c7a6e;
         transform: translateY(-2px);
     }
+}
 
-    /* Адаптив для основной кнопки */
-    // @media (max-width: 768px) {
-    //     width: 240px;
-    //     height: 45px;
-    //     font-size: 16px;
-    // }
-
-    // @media (max-width: 480px) {
-    //     width: 200px;
-    //     height: 40px;
-    //     font-size: 14px;
-    // }
+.btn--primary:disabled {
+    background: #a0b8c5;
+    cursor: default;
+    transform: none;
 }
 
 /* Маленькая кнопка */
@@ -83,15 +77,4 @@
         background: #2c7a6e;
         transform: translateY(-2px);
     }
-
-//     /* Адаптив для маленькой кнопки */
-//     @media (max-width: 768px) {
-//         padding: 8px 16px;
-//         font-size: 14px;
-//     }
-
-//     @media (max-width: 480px) {
-//         padding: 6px 12px;
-//         font-size: 12px;
-//     }
 }

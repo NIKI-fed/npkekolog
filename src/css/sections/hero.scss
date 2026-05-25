@@ -7,152 +7,202 @@
     overflow: hidden;
     cursor: grab;
     position: relative;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    &__background {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/backgrounds/0.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__track {
+        display: flex;
+        z-index: 1;
+        height: 100%;
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    &__slide {
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+
+        // Анимация появления слайда
+        animation: slideFadeIn 1.6s ease forwards;
+
+        /* Фоновые изображения */
+        &:nth-child(1) {
+            background-image: url('/assets/backgrounds/1.jpg');
+        }
+
+        &:nth-child(2) {
+            background-image: url('/assets/backgrounds/2.jpg');
+        }
+
+        &:nth-child(3) {
+            background-image: url('/assets/backgrounds/3.jpg');
+        }
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        z-index: 2;
+        width: 100%;
+        max-width: 1440px;
+        padding: 150px;
+
+        // Анимация появления текста (чуть позже, чем слайд)
+        animation: textFadeInUp 3s ease 0.2s forwards;
+        opacity: 0;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: clamp(1.5rem, 1.142rem + 1.5909vw, 2.375rem);
+        line-height: 1.2;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        max-width: 500px;
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 1.5;
+        opacity: 0.9;
+        max-width: 500px;
+    }
+
+    /* Стрелки */
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 60px;
+        cursor: pointer;
+        z-index: 4;
+        transition: color 0.2s;
+        font-family: monospace;
+
+        // Анимация появления стрелок
+        animation: fadeIn 0.6s ease 3s forwards;
+        opacity: 0;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        &--prev {
+            left: 20px;
+        }
+
+        &--next {
+            right: 20px;
+        }
+    }
 }
 
-.hero__background {
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('/assets/backgrounds/0.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* ========== АНИМАЦИИ ========== */
+
+// Плавное появление с масштабом для слайда
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    
+    50% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.hero:active {
-    cursor: grabbing;
+// Плавное появление текста с подъёмом вверх
+@keyframes textFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
 
-.hero__track {
-    display: flex;
-    z-index: 1;
-    height: 100%;
-    will-change: transform;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+// Простое появление (для стрелок и т.д.)
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.hero__slide {
-    flex-shrink: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
+/* ========== АДАПТИВ ========== */
 
-/* Фоновые изображения */
-.hero__slide:nth-child(1) {
-    background-image: url('/assets/backgrounds/1.jpg');
-}
-
-.hero__slide:nth-child(2) {
-    background-image: url('/assets/backgrounds/2.jpg');
-}
-
-.hero__slide:nth-child(3) {
-    background-image: url('/assets/backgrounds/3.jpg');
-}
-
-.hero__text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    z-index: 2;
-    width: 100%;
-    max-width: 1440px;
-    padding: 150px;
-}
-
-.hero__title {
-    font-weight: 700;
-    font-size: clamp(1.5rem, 1.142rem + 1.5909vw, 2.375rem);
-    line-height: 1.2;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    max-width: 500px;
-}
-
-.hero__description {
-    font-size: 18px;
-    line-height: 1.5;
-    opacity: 0.9;
-    max-width: 500px;
-}
-
-/* Стрелки */
-.hero__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 60px;
-    cursor: pointer;
-    z-index: 4;
-    transition: color 0.2s;
-    font-family: monospace;
-}
-
-.hero__arrow:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.hero__arrow--prev {
-    left: 20px;
-}
-
-.hero__arrow--next {
-    right: 20px;
-}
-
-
-
-@media (max-width: 1800px) {
+@media (max-width: 1024px) {
     .hero {
-        height: clamp(46.875rem, 21.875rem + 27.7778vw, 53.125rem);
+        &__text {
+            background-color: rgb(0, 0, 0, 0.2);
+            border-radius: 30px;
+            width: 53%;
+            top: 53%;
+            left: 40%;
+            padding: 30px;
+        }
     }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 600px) {
     .hero {
-        height: 750px;
-    }
-}
+        &__slide:nth-child(1),
+        &__slide:nth-child(2),
+        &__slide:nth-child(3) {
+            background-image: none;
+        }
 
-@media (max-width: 1240px) {
-    .hero__text {
-        width: 70%;
-        left: 35%;
-        // padding: 140px;
-    }
-    .hero__slide {
-        background-size: contain;
-        
-    }
-    .hero {
-        height: 550px;
-    }
-}
+        &__text {
+            // background-color: rgb(0, 0, 0, 0.2);
+            // border-radius: 10% 10%;
+            width: 85%;
+            top: 72%;
+            left: 50%;
+            padding: 20px;
+        }
 
-@media (max-width: 900px) {
-    .hero__text {
-        width: 75%;
-        left: 30%;
-        // top: 60%;
-        // padding: 140px;
-    }
-}
-
-@media (max-width: 800px) {
-    .hero__text {
-        width: 75%;
-        left: 30%;
-        top: 55%;
-        // padding: 140px;
+        &__arrow {
+            display: none;
+        }
     }
 }

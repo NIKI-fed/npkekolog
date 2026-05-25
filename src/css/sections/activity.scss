@@ -36,33 +36,6 @@
     z-index: 1;
 }
 
-/* 1-я карточка */
-.activity__card:nth-child(1) {
-    background-color: $color-activity-1;
-}
-
-.activity__card:nth-child(1)::before {
-    background-image: url('/assets/backgrounds/4.jpg');
-}
-
-/* 2-я карточка */
-.activity__card:nth-child(2) {
-    background-color: $color-activity-2;
-}
-
-.activity__card:nth-child(2)::before {
-    background-image: url('../../assets/backgrounds/5.jpg');
-}
-
-/* 3-я карточка */
-.activity__card:nth-child(3) {
-    background-color: $color-activity-3;
-}
-
-.activity__card:nth-child(3)::before {
-    background-image: url('../../assets/backgrounds/6.jpg');
-}
-
 .activity__card:hover::before {
     transform: scale(1.1);
 }
@@ -94,6 +67,73 @@
     font-size: 16px;
     line-height: 1.4;
 }
+
+/* ========== АНИМАЦИИ ========== */
+
+/* 1-я карточка (левая) - без анимации по умолчанию */
+.activity__card:nth-child(1) {
+    background-color: $color-activity-1;
+    opacity: 1; // Исходно не скрыта
+}
+
+.activity__card:nth-child(1)::before {
+    background-image: url('/assets/backgrounds/4.jpg');
+}
+
+/* 2-я карточка (центральная) */
+.activity__card:nth-child(2) {
+    background-color: $color-activity-2;
+}
+
+.activity__card:nth-child(2)::before {
+    background-image: url('../../assets/backgrounds/5.jpg');
+}
+
+/* 3-я карточка (правая) - без анимации по умолчанию */
+.activity__card:nth-child(3) {
+    background-color: $color-activity-3;
+    opacity: 1;
+}
+
+.activity__card:nth-child(3)::before {
+    background-image: url('../../assets/backgrounds/6.jpg');
+}
+
+/* ========== АНИМАЦИИ ПРИ ПОЯВЛЕНИИ ========== */
+
+// Левая карточка — приезжает слева
+.activity__card:nth-child(1).activity__card--animated {
+    animation: slideFromLeft 1.2s ease forwards;
+}
+
+// Правая карточка — приезжает справа
+.activity__card:nth-child(3).activity__card--animated {
+    animation: slideFromRight 1.2s ease forwards;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========== АДАПТИВ ========== */
 
 @media (max-width: 1240px) {
     .activity__inner {

@@ -1,75 +1,67 @@
 @use '../base/variables' as *;
 
+// Страница с разделами ТЕХНОЛОГИИ, ОБОРУДОВАНИЕ, УСЛУГИ
+
 .section {
     width: 100%;
     margin: auto;
-}
 
-.section__inner {
-    max-width: 1640px;
-    margin: auto;
-    padding: 50px;
-    text-align: center;
-}
+    &__inner {
+        max-width: 1640px;
+        margin: auto;
+        padding: 50px;
+        text-align: center;
 
-.section__inner h2 {
-    font-size: 36px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
+        & h2 {
+            font-size: clamp(1.625rem, 1.0735rem + 2.451vw, 2.25rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
 
-.section__inner h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: #1a6b5e;
-    border-radius: 2px;
-}
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 3px;
+                background: #1a6b5e;
+                border-radius: 2px;
+            }
+        }
+    }
+    
+    /* Сетка карточек*/
+    &__menu {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        padding-top: 50px;
+        list-style: none;
+        margin: 0;
+    }
+    
+    /* Карточка */
+    &__card {
+        position: relative;
+        display: block;
+        min-width: 400px;
+        height: 300px;
+        flex-grow: 1;
+        border-radius: 16px;
+        overflow: hidden;
+        text-decoration: none;
 
-/* Сетка карточек (твой флекс) */
-.section__menu {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding-top: 50px;
-    list-style: none;
-    margin: 0;
-}
-
-/* Карточка */
-.section__card {
-    position: relative;
-    display: block;
-    min-width: 400px;
-    height: 300px;
-    flex-grow: 1;
-    border-radius: 16px;
-    overflow: hidden;
-    text-decoration: none;
-}
-
-/* Контейнер для фоновой картинки с увеличением */
-.section__card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: transform 0.4s ease;
-    z-index: 1;
+        &-width {
+            min-width: 500px;
+        }
+    }
 }
 
 /* Увеличение фона при ховере на карточку */
@@ -117,40 +109,63 @@
     color: #ffffff;
 }
 
-/* Фоновые изображения для каждой карточки */
-.section__card:nth-child(1) .section__card-bg {
+/* Контейнер для фоновой картинки с увеличением */
+.section__card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+/* Фоновые изображения для каждой карточки ТЕХНОЛОГИИ*/
+.section__card:nth-child(1) .section__card-technologies {
     background-image: url("/assets/backgrounds/technologies/technologies_1.jpg");
 }
-.section__card:nth-child(2) .section__card-bg {
+.section__card:nth-child(2) .section__card-technologies {
     background-image: url("/assets/backgrounds/technologies/technologies_2.jpg");
 }
-.section__card:nth-child(3) .section__card-bg {
+.section__card:nth-child(3) .section__card-technologies {
     background-image: url("/assets/backgrounds/technologies/technologies_3.jpg");
 }
-.section__card:nth-child(4) .section__card-bg {
+.section__card:nth-child(4) .section__card-technologies {
     background-image: url("/assets/backgrounds/technologies/technologies_4.jpg");
 }
-.section__card:nth-child(5) .section__card-bg {
+.section__card:nth-child(5) .section__card-technologies {
     background-image: url("/assets/backgrounds/technologies/technologies_5.jpg");
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-    .section__inner {
-        padding: 30px;
-    }
-    
-    .section__card {
-        min-width: 280px;
-        height: 240px;
-    }
-    
-    .section__card-label {
-        font-size: 12px;
-        padding: 6px 12px;
-        top: 12px;
-        right: 12px;
-    }
+/* Фоновые изображения для каждой карточки ОБОРУДОВАНИЕ*/
+.section__card:nth-child(1) .section__card-equipment {
+    background-image: url("/assets/backgrounds/equipment/equipment_1.jpg");
+}
+.section__card:nth-child(2) .section__card-equipment {
+    background-image: url("/assets/backgrounds/equipment/equipment_2.jpg");
+}
+.section__card:nth-child(3) .section__card-equipment {
+    background-image: url("/assets/backgrounds/equipment/equipment_3.jpg");
+}
+.section__card:nth-child(4) .section__card-equipment {
+    background-image: url("/assets/backgrounds/equipment/equipment_4.jpg");
+}
+
+/* Фоновые изображения для каждой карточки УСЛУГИ*/
+.section__card:nth-child(1) .section__card-services {
+    background-image: url("/assets/backgrounds/services/services_1.jpg");
+}
+.section__card:nth-child(2) .section__card-services {
+    background-image: url("/assets/backgrounds/services/services_2.jpg");
+}
+.section__card:nth-child(3) .section__card-services {
+    background-image: url("/assets/backgrounds/services/services_3.jpg");
+}
+.section__card:nth-child(4) .section__card-services {
+    background-image: url("/assets/backgrounds/services/services_4.jpg");
 }
 
 /* Описание под карточками */
@@ -162,6 +177,10 @@
     border-radius: 20px;
     border-left: 4px solid $color-green;
     text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.3s;
 }
 
 .section__description p {
@@ -180,8 +199,23 @@
     color: #1a2c3e;
 }
 
-/* Адаптив для описания */
+/* Адаптив */
 @media (max-width: 768px) {
+    .section__inner {
+        padding: 30px;
+    }
+    
+    .section__card {
+        min-width: 280px;
+        height: 240px;
+    }
+    
+    .section__card-label {
+        font-size: 16px;
+        padding: 6px 12px;
+        right: 12px;
+    }
+
     .section__description {
         margin-top: 40px;
         padding: 20px;
@@ -191,13 +225,6 @@
         font-size: 16px;
         line-height: 1.5;
     }
-}
-
-.section__description {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease forwards;
-    animation-delay: 0.3s;
 }
 
 @keyframes fadeInUp {

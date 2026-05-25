@@ -228,3 +228,21 @@
         gap: 20px;
     }
 }
+
+/* ========== АНИМАЦИИ ========== */
+.header__main {
+    animation: headerFadeIn 1s ease forwards;
+}
+
+// Плавное появление для header на главной странице
+@keyframes headerFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

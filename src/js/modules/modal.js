@@ -6,7 +6,7 @@ const modalSuccess = document.getElementById('modal-success');
 function openModal() {
     if (!modal) return;
     modal.classList.add('active');
-    if (modalBody) modalBody.style.display = 'block';
+    if (modalBody) modalBody.style.display = 'flex';
     if (modalSuccess) modalSuccess.style.display = 'none';
     // document.body.style.overflow = 'hidden';
 }
