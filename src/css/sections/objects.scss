@@ -1,5 +1,9 @@
 @use '../base/variables' as *;
 
+*{
+    outline: red solid 1px;
+}
+
 // Блок объекты на главной
 
 .objects {
@@ -47,7 +51,11 @@
 
 .objects__map-img {
     width: 100%;
-    max-width: 100%;
+    margin: 0 auto;
+
+    // max-width: 100%;
+    // height: auto;
+    // display: block;
 }
 
 .objects__link {

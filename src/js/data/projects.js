@@ -5,7 +5,7 @@ export const projects = [
         img: '/assets/images/projects/sakhalin.png',
         alt: 'Герб Сахалина',
         object: 'Сахалинская область',
-        power: '24 кг в сутки',
+        power: '48 кг в сутки',
         powerDesc: 'эквивалента активного хлора в гипохлорите',
         equipment: '2 электролизные установки ЭКВА-1',
         year: 2025
