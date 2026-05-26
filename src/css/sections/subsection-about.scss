@@ -1,0 +1,162 @@
+@use '../base/variables' as *;
+
+// БЛОК ОПИСАНИЯ ДЛЯ СТРАНИЦ РАЗДЕЛА "О КОМПАНИИ"
+
+.subsection {
+    &__about {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+
+        // Текстовый блок
+        &-text {
+            p {
+                font-size: 15px;
+                line-height: 1.6;
+                color: $color-gray-dark;
+                margin-bottom: 20px;
+                
+                &:first-child {
+                    font-weight: 500;
+                    color: $color-header-footer;
+                }
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        // Заголовок блока (например, "О нас в цифрах:")
+        h4 {
+            font-size: 26px;
+            font-weight: 600;
+            color: $color-header-footer;
+            position: relative;
+            padding-bottom: 12px;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 2px;
+                background: $color-green;
+                border-radius: 2px;
+            }
+        }
+
+        // Контейнер карточек с цифрами
+        &-facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        // Карточка с цифрой
+        &-item {
+            background: rgba($color-green, 0.04);
+            border-radius: 20px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba($color-green, 0.1);
+            
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+                background: rgba($color-green, 0.08);
+                border-color: rgba($color-green, 0.2);
+            }
+            
+            span {
+                display: block;
+                font-size: 42px;
+                font-weight: 700;
+                color: $color-green;
+                margin-bottom: 12px;
+                letter-spacing: 2px;
+            }
+            
+            p {
+                font-size: 14px;
+                line-height: 1.4;
+                margin: 0;
+                color: $color-gray-dark;
+            }
+        }
+    }
+}
+
+// АДАПТИВ ДЛЯ ПЛАНШЕТОВ (до 1024px)
+@media (max-width: 1024px) {
+    .subsection {
+        &__about {
+            &-facts {
+                gap: 20px;
+            }
+            
+            &-item {
+                span {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+}
+
+
+// АДАПТИВ ДЛЯ МОБИЛЬНЫХ (до 768px)
+@media (max-width: 768px) {
+    .subsection {
+        &__about {
+            &-facts {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            &-item {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                padding: 20px;
+                gap: 20px;
+                
+                span {
+                    font-size: 32px;
+                    min-width: 80px;
+                    margin-bottom: 0;
+                }
+                
+                p {
+                    flex: 1;
+                }
+            }
+            
+            h4 {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// АДАПТИВ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 480px)
+@media (max-width: 480px) {
+    .subsection {
+        &__description {
+            &-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                
+                span {
+                    min-width: auto;
+                }
+            }
+        }
+    }
+}

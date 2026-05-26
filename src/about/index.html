@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>История компании | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <!-- <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin> -->
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>История компании</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/about/about.jpg" alt="Медный всадник">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection__content">
+                <div class="subsection__content-inner">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/about_list.html"></include>
+
+                    <div class="subsection__about">
+                        <div class="subsection__about-text">
+                            <p>История компании берёт своё начало в 1988 г., когда при научно-техническом управлении Ленгорисполкома был образован Научно-производственный кооператив «Эколог», который выполнял работы по заказам предприятий Ленинграда в области переработки отходов, проведения работ по удалению минерального масла из стружки, разработке и проверке на практике новой технологии обезвоживания и захоронения осадков сточных вод. Выполнен ряд работ по биотехнологии.</p>
+                            <p>С 1989 г. основной объём заказов выполнялся для ленинградского «Водоканала». По заданию Всемирной лаборатории были выполнены работы по созданию техники и технологии электролиза хлорсодержащих солей с целью получения гипохлорита натрия – безопасного реагента, заменяющего хлор при обеззараживании питьевой воды, сточных вод, при производстве чистящих, моющих средств, отбеливании бумаги и тканей.</p>
+                            <p>Новую страницу своей истории компания открыла в 2004 году, когда получила своё нынешнее название и сосредоточила свои усилия на развитии и внедрении новой, разработанной технологии получения гипохлорита натрия.</p>
+                            <p>За время работы в арсенале возможностей ООО «НПК ЭКОЛОГ» было собрано около 240 физических и химических эффектов с их использованием в науке и промышленности.</p>
+                        </div>
+                        <h4>О нас в цифрах:</h4>
+                        <div class="subsection__about-facts">
+                            <div class="subsection__about-item">
+                                <span>240</span>
+                                <p>физических и химических эффектов в арсенале нашей деятельности</p>
+                            </div>
+                            <div class="subsection__about-item">
+                                <span>более 10</span>
+                                <p>зарегистрированных российских патентов и 1&nbsp;евразийский патент</p>
+                            </div>
+                            <div class="subsection__about-item">
+                                <span>1988 год</span>
+                                <p>С 1988&nbsp;года берёт своё начало история компании ООО&nbsp;«НПК&nbsp;ЭКОЛОГ»</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

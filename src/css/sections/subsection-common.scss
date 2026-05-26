@@ -1,0 +1,347 @@
+@use '../base/variables' as *;
+
+.subsection {
+    max-width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    
+    // Декоративный разделитель сверху
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, $color-green, transparent);
+    }
+
+    &__inner {
+        max-width: 1300px;
+        margin: auto;
+        padding: 20px 50px;
+        text-align: center;
+
+        h2 {
+            font-size: clamp(1.625rem, 1.0735rem + 2.451vw, 2.25rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+            margin-block: 20px;
+            color: $color-header-footer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 3px;
+                background: $color-green;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 20px 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    &__content {
+        max-width: 1300px;
+        margin: auto;
+        display: flex;
+        padding-block: 20px 40px;
+        gap: 60px;
+        flex-wrap: wrap;
+
+        &-inner {
+            max-width: 100%;
+            padding-inline: 50px;
+            display: flex;
+            gap: 60px;
+        }
+    }
+
+    // Боковое меню
+    &__list {
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        flex-shrink: 0;
+
+        &-item {
+            display: block;
+            position: relative;
+            width: 100%;
+            background-color: $color-gray-light;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+                padding: 15px 20px;
+                font-size: 16px;
+                font-weight: 500;
+                color: $color-header-footer;
+                transition: all 0.3s ease;
+            }
+
+            &:not(&-active):hover {
+                background-color: rgba($color-green, 0.1);
+                transform: translateX(5px);
+                
+                a {
+                    color: $color-green;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 1px;
+                background-color: rgba($color-gray-dark, 0.1);
+            }
+
+            &:last-child::after {
+                display: none;
+            }
+        }
+
+        &-active {
+            background-color: $color-green;
+            pointer-events: none;
+            box-shadow: 0 4px 12px rgba($color-green, 0.3);
+
+            a {
+                color: $color-white;
+                font-weight: 600;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    // Блок описания
+    &__description {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+
+        &-text {
+            p {
+                font-size: 15px;
+                line-height: 1.6;
+                color: $color-gray-dark;
+                margin-bottom: 20px;
+                
+                &:first-child {
+                    font-weight: 500;
+                    color: $color-header-footer;
+                }
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        h4 {
+            font-size: 26px;
+            font-weight: 600;
+            color: $color-header-footer;
+            position: relative;
+            padding-bottom: 12px;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 2px;
+                background: $color-green;
+                border-radius: 2px;
+            }
+        }
+
+        &-facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        &-item {
+            background: rgba($color-green, 0.04);
+            border-radius: 20px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba($color-green, 0.1);
+            
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+                background: rgba($color-green, 0.08);
+                border-color: rgba($color-green, 0.2);
+            }
+            
+            span {
+                display: block;
+                font-size: 42px;
+                font-weight: 700;
+                color: $color-green;
+                margin-bottom: 12px;
+                letter-spacing: 2px;
+            }
+            
+            p {
+                font-size: 14px;
+                line-height: 1.4;
+                margin: 0;
+                color: $color-gray-dark;
+            }
+        }
+    }
+}
+
+// Адаптив для планшетов
+@media (max-width: 1024px) {
+    .subsection {
+        &__inner {
+            padding: 20px 30px;
+        }
+
+        &__content {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 12px;
+
+            &-item {
+                flex: 1;
+                min-width: 200px;
+                margin-bottom: 0;
+                
+                a {
+                    justify-content: center;
+                    padding: 12px 16px;
+                    font-size: 14px;
+                }
+                
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        
+        &__description-facts {
+            gap: 20px;
+        }
+        
+        &__description-item span {
+            font-size: 36px;
+        }
+    }
+}
+
+// Адаптив для мобильных
+@media (max-width: 768px) {
+    .subsection {
+        &__inner {
+            padding: 20px;
+        }
+        
+        &__description-facts {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        
+        &__description-item {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            padding: 20px;
+            gap: 20px;
+            
+            span {
+                font-size: 32px;
+                min-width: 80px;
+                margin-bottom: 0;
+            }
+            
+            p {
+                flex: 1;
+            }
+        }
+        
+        &__description h4 {
+            font-size: 20px;
+        }
+    }
+}
+
+// Адаптив для маленьких телефонов
+@media (max-width: 480px) {
+    .subsection {
+        &__list {
+            flex-direction: column;
+            
+            &-item {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+        
+        &__description-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            
+            span {
+                min-width: auto;
+            }
+        }
+    }
+}

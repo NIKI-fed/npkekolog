@@ -1,20 +1,11 @@
 @use '../base/variables' as *;
 
-*{
-    outline: red solid 1px;
-}
-
 // Блок объекты на главной
 
 .objects {
     width: 100%;
     max-width: 100%;
     margin: auto;
-}
-
-.objects__inner {
-    padding: 50px;
-    text-align: center;
 }
 
 .objects__inner {
@@ -50,7 +41,7 @@
 }
 
 .objects__map-img {
-    width: 100%;
+    width: 100% !important;
     margin: 0 auto;
 
     // max-width: 100%;
