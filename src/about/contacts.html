@@ -21,55 +21,56 @@
             <!-- Используем партиалы Vite + plugin -->
             <include file="partials/header_page.html"></include>
 
-            <div class="subsection">
+            <section class="subsection">
                 <div class="subsection__inner">
                     <h2>Контакты</h2>
-                </div>
-            </div>
-
-            <section class="contacts-page">
-                <div class="contacts-page__inner">
-                    <!-- Карта с логотипом -->
-                    <div class="contacts-page__map-wrapper">
+                    <div class="subsection__img">
                         <iframe class="contacts-page__map"
                             src="https://yandex.ru/map-widget/v1/?ll=30.3981,59.9855&z=16&pt=30.3986,59.9852,pm2rdm&scroll=false"
                             frameborder="0"
                             allowfullscreen>
                         </iframe>
-                        
                         <!-- Указатель с логотипом -->
                         <div class="contacts-page__marker">
-                            <img src="/assets/icons/logo_512.png" alt="Локация">
-                        </div>
-                    </div>
-            
-                    <!-- Карточка с контактами -->
-                    <div class="contacts-page__card">
-                        <h2>Контактная информация</h2>
-                        
-                        <div class="contacts-page__item">
-                            <h4>Юридический адрес</h4>
-                            <p>195271, Россия, г.&nbsp;Санкт-Петербург, Кондратьевский&nbsp;пр.&nbsp;72, литера&nbsp;А, пом.&nbsp;30Н, комн.&nbsp;30</p>
-                        </div>
-            
-                        <div class="contacts-page__item">
-                            <h4>Почтовый адрес</h4>
-                            <p>195271, Россия, г.&nbsp;Санкт-Петербург, ул.&nbsp;Замшина&nbsp;27, литера&nbsp;А, корп.&nbsp;1, а/я&nbsp;7</p>
-                        </div>
-            
-                        <div class="contacts-page__item">
-                            <h4>E-mail</h4>
-                            <a href="mailto:info@npkekolog.ru">info@npkekolog.ru</a>
-                        </div>
-            
-                        <div class="contacts-page__item">
-                            <h4>Телефон</h4>
-                            <a href="tel:+79111560905">8 (911) 156-09-05</a>
+                            <img class="contacts-page__marker-img" src="/assets/icons/logo_512.png" alt="Локация">
                         </div>
                     </div>
                 </div>
             </section>
 
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/about_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    <div class="subsection__contacts">
+                        
+                        <div class="subsection__contacts-item">
+                            <h4>Юридический адрес</h4>
+                            <p>195271, Россия, г.&nbsp;Санкт-Петербург, Кондратьевский&nbsp;пр.&nbsp;72, литера&nbsp;А, пом.&nbsp;30Н, комн.&nbsp;30</p>
+                        </div>
+            
+                        <div class="subsection__contacts-item">
+                            <h4>Почтовый адрес</h4>
+                            <p>195271, Россия, г.&nbsp;Санкт-Петербург, ул.&nbsp;Замшина&nbsp;27, литера&nbsp;А, корп.&nbsp;1, а/я&nbsp;7</p>
+                        </div>
+            
+                        <div class="subsection__contacts-item">
+                            <h4>E-mail</h4>
+                            <a href="mailto:info@npkekolog.ru">info@npkekolog.ru</a>
+                        </div>
+            
+                        <div class="subsection__contacts-item">
+                            <h4>Телефон</h4>
+                            <a href="tel:+79111560905">8 (911) 156-09-05</a>
+                        </div>
+                        
+                    </div>
+                    <!-- КОНЕЦ уникального куска -->
+
+                </div>
+            </section>
         </main>
 
         <!-- Карта сайта (выпадающая панель сверху) -->

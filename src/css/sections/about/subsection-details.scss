@@ -1,0 +1,193 @@
+@use '../../base/variables' as *;
+
+// БЛОК РЕКВИЗИТОВ ДЛЯ СТРАНИЦЫ "РЕКВИЗИТЫ"
+
+.subsection {
+    &__details {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    &__details-card {
+        background: $color-white;
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba($color-gray-dark, 0.1);
+    }
+    
+    h3 {
+        font-size: 24px;
+        font-weight: 700;
+        color: $color-header-footer;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: $color-green;
+            border-radius: 2px;
+        }
+    }
+    
+    &__details-section {
+        margin-bottom: 32px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__details-section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: $color-green;
+        margin-bottom: 16px;
+        padding-left: 12px;
+        border-left: 3px solid $color-green;
+        line-height: 1.6;
+    }
+    
+    &__details-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    &__details-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba($color-gray-dark, 0.1);
+    }
+    
+    &__details-label {
+        font-size: 15px;
+        font-weight: 600;
+        color: $color-green;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    &__details-value {
+        font-size: 16px;
+        line-height: 1.4;
+        color: $color-gray-dark;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        
+        a {
+            color: $color-header-footer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            
+            &:hover {
+                color: $color-green;
+                transform: translateX(5px);
+            }
+        }
+    }
+    
+    // ===== КОПИРУЕМЫЕ ЭЛЕМЕНТЫ =====
+    .copyable {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        padding: 4px 8px;
+        margin: -4px -8px;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+            background: rgba($color-green, 0.1);
+        }
+        
+        // Активное состояние (копирование)
+        &.copied {
+            background-color: rgba($color-green, 0.6);
+        }
+        
+        // Плавное возвращение к обычному состоянию
+        &.copying-fade {
+            background-color: rgba($color-green, 0);
+            transition: all 1.2s ease !important;
+
+        }
+    }
+    
+    .copyable__icon {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        opacity: 0.5;
+        transition: opacity 0.2s ease;
+    }
+    
+    .copyable:hover .copyable__icon {
+        opacity: 1;
+    }
+    
+    .copyable.copied .copyable__icon {
+        opacity: 1;
+        filter: brightness(0.8);
+    }
+}
+
+// ============================================
+// АДАПТИВ
+// ============================================
+
+@media (max-width: 768px) {
+    .subsection {
+        &__details-card {
+            padding: 24px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            text-align: center;
+            
+            &::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        &__details-section {
+            margin-bottom: 24px;
+        }
+        
+        &__details-section-title {
+            font-size: 17px;
+            text-align: center;
+            padding-left: 0;
+            border-left: none;
+            border-bottom: 2px solid $color-green;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        
+        &__details-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        
+        &__details-item {
+            padding: 10px 0;
+        }
+        
+        &__details-value {
+            font-size: 14px;
+            word-break: break-word;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Дополнительно | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <!-- <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin> -->
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>Дополнительные материалы</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/about/additional.png" alt="Реквизиты компании">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/about_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    
+                    <div class="subsection__files">
+                        <h4 class="subsection__files-title">Документы для скачивания</h4>
+                        <div class="subsection__files-grid">
+                            
+                            <a href="/assets/files/presentation.pdf" class="file-card" download>
+                                <div class="file-card__icon">
+                                    <img src="/assets/icons/icon-download.svg" alt="Скачать">
+                                </div>
+                                <div class="file-card__info">
+                                    <div class="file-card__title">Презентация компании</div>
+                                    <div class="file-card__size">PDF, 2.5 МБ</div>
+                                </div>
+                                <span class="file-card__hint">Скачать</span>
+                            </a>
+                    
+                            <a href="/assets/files/card.pdf" class="file-card" download>
+                                <div class="file-card__icon">
+                                    <img src="/assets/icons/icon-download.svg" alt="Скачать">
+                                </div>
+                                <div class="file-card__info">
+                                    <div class="file-card__title">Карточка предприятия</div>
+                                    <div class="file-card__size">PDF, 1.8 МБ</div>
+                                </div>
+                                <span class="file-card__hint">Скачать</span>
+                            </a>
+                    
+                            <a href="/assets/files/questionnaire.pdf" class="file-card" download>
+                                <div class="file-card__icon">
+                                    <img src="/assets/icons/icon-download.svg" alt="Скачать">
+                                </div>
+                                <div class="file-card__info">
+                                    <div class="file-card__title">Опросный лист</div>
+                                    <div class="file-card__size">PDF, 1.2 МБ</div>
+                                </div>
+                                <span class="file-card__hint">Скачать</span>
+                            </a>
+                    
+                        </div>
+                    </div>
+
+                    <!-- КОНЕЦ уникального куска -->
+                    
+                </div>
+            </section>
+
+            <include file="partials/viewer.html"></include>
+
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

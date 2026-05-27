@@ -1,0 +1,157 @@
+@use '../../base/variables' as *;
+
+// ============================================
+// БЛОК С ФАЙЛАМИ ДЛЯ СКАЧИВАНИЯ
+// ============================================
+
+.subsection {
+    &__files {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    &__files-title {
+        font-size: 22px;
+        font-weight: 600;
+        color: $color-header-footer;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: $color-green;
+            border-radius: 2px;
+        }
+    }
+    
+    &__files-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 24px;
+    }
+}
+
+.file-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: $color-white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba($color-gray-dark, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    position: relative;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        border-color: rgba($color-green, 0.3);
+        
+        .file-card__icon {
+            transform: scale(1.05);
+        }
+        
+        .file-card__hint {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    
+    &__icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    
+    &__info {
+        flex: 1;
+    }
+    
+    &__title {
+        font-size: 16px;
+        font-weight: 600;
+        color: $color-header-footer;
+        margin-bottom: 4px;
+    }
+    
+    &__size {
+        font-size: 12px;
+        color: rgba($color-gray-dark, 0.6);
+    }
+    
+    &__hint {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        color: $color-green;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        background: rgba($color-green, 0.1);
+        padding: 4px 10px;
+        border-radius: 20px;
+    }
+}
+
+// Адаптив
+@media (max-width: 768px) {
+    .subsection {
+        &__files-title {
+            font-size: 18px;
+            text-align: center;
+            
+            &::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        &__files-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+    
+    .file-card {
+        padding: 16px;
+        
+        &__icon {
+            width: 32px;
+            height: 32px;
+        }
+        
+        &__title {
+            font-size: 14px;
+        }
+        
+        &__size {
+            font-size: 11px;
+        }
+        
+        &__hint {
+            position: static;
+            margin-left: auto;
+            opacity: 1;
+            visibility: visible;
+            font-size: 11px;
+            padding: 4px 8px;
+        }
+    }
+}

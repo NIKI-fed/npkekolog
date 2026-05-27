@@ -1,4 +1,4 @@
-@use '../base/variables' as *;
+@use '../../base/variables' as *;
 
 // БЛОК ОПИСАНИЯ ДЛЯ СТРАНИЦ РАЗДЕЛА "О КОМПАНИИ"
 
@@ -12,21 +12,18 @@
 
         // Текстовый блок
         &-text {
-            p {
-                font-size: 15px;
-                line-height: 1.6;
-                color: $color-gray-dark;
-                margin-bottom: 20px;
-                
-                &:first-child {
-                    font-weight: 500;
-                    color: $color-header-footer;
-                }
-                
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
+            background: $color-white;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba($color-gray-dark, 0.1);
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: $color-gray-dark;
         }
 
         // Заголовок блока ("О нас в цифрах:")
@@ -35,7 +32,7 @@
             font-weight: 600;
             color: $color-header-footer;
             position: relative;
-            padding-bottom: 12px;
+            padding-block: 0 12px;
             
             &::after {
                 content: '';
@@ -109,7 +106,6 @@
     }
 }
 
-
 // АДАПТИВ ДЛЯ МОБИЛЬНЫХ (до 768px)
 @media (max-width: 768px) {
     .subsection {
@@ -120,7 +116,6 @@
             }
             
             &-item {
-                // display: flex;
                 align-items: center;
                 text-align: left;
                 padding: 20px;
@@ -139,23 +134,6 @@
             
             h4 {
                 font-size: 20px;
-            }
-        }
-    }
-}
-
-// АДАПТИВ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ (до 480px)
-@media (max-width: 480px) {
-    .subsection {
-        &__description {
-            &-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-                
-                span {
-                    min-width: auto;
-                }
             }
         }
     }

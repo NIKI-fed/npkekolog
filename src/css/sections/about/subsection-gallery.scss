@@ -1,4 +1,4 @@
-@use '../base/variables' as *;
+@use '../../base/variables' as *;
 
 .gallery-page {
     width: 100%;
@@ -23,9 +23,9 @@
         }
     }
 
-    &__grid {
+    &__patents, &__gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 30px;
     }
 }
@@ -54,6 +54,10 @@
         height: 240px;
         overflow: hidden;
         background: $color-gray-light;
+
+        &-bg {
+            height: clamp(11.25rem, 1.0843rem + 45.1807vw, 30rem);
+        }
         
         img {
             width: 100%;

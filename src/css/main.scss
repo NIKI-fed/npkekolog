@@ -14,11 +14,13 @@
 @use 'sections/objects';
 @use 'sections/projects-page';
 @use 'sections/contacts';
-@use 'sections/contacts-page';
 
 @use 'sections/subsection-common';
-@use 'sections/subsection-about';
-@use 'sections/subsection-gallery';
+@use 'sections/about/subsection-about';
+@use 'sections/about/subsection-contacts';
+@use 'sections/about/subsection-gallery';
+@use 'sections/about/subsection-details';
+@use 'sections/about/subsection-additional';
 
 /* Дополнительные страницы */
 @use 'sections/legal-page';
@@ -29,6 +31,7 @@
 @use 'components/button';
 @use 'components/cookies';
 @use 'components/modal';
+@use 'components/viewer';
 
 // *{
 //     outline: red solid 1px;
