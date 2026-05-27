@@ -29,7 +29,7 @@
             }
         }
 
-        // Заголовок блока (например, "О нас в цифрах:")
+        // Заголовок блока ("О нас в цифрах:")
         h4 {
             font-size: 26px;
             font-weight: 600;
@@ -120,7 +120,7 @@
             }
             
             &-item {
-                display: flex;
+                // display: flex;
                 align-items: center;
                 text-align: left;
                 padding: 20px;
