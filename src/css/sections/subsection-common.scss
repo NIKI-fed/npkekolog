@@ -13,7 +13,7 @@
         text-align: center;
 
         h2 {
-            font-size: clamp(1.625rem, 1.0735rem + 2.451vw, 2.25rem);
+            font-size: clamp(1.5rem, 1.0934rem + 1.8072vw, 2.25rem);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -50,6 +50,7 @@
 
     &__img {
         width: 100%;
+        aspect-ratio: 1200 / 390;
         border-radius: 20px;
         overflow: hidden;
         margin: 20px 0;
@@ -57,7 +58,9 @@
 
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
             display: block;
             transition: transform 0.4s ease;
             

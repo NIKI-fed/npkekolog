@@ -1,0 +1,203 @@
+@use '../../base/variables' as *;
+
+// ============================================
+// СТРАНИЦА "ОБЕЗЗАРАЖИВАНИЕ ВОДЫ"
+// ============================================
+
+.technology-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+        font-size: 26px;
+        font-weight: 600;
+        color: $color-header-footer;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-weight: 600;
+        color: $color-header-footer;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    p, li {
+        font-size: 16px;
+        line-height: 1.5;
+        color: $color-gray-dark;
+        margin-bottom: 15px;
+    }
+
+    ul {
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+
+    // Общий класс для контента
+    .tech-content {
+        &__image {
+            margin: 20px 0;
+            text-align: center;
+            
+            img {
+                // width: clamp(16.25rem, 2.3569rem + 61.747vw, 41.875rem);
+                max-width: 100%;
+                height: auto;
+                border-radius: 16px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    // ===== Блок с патентом и товарным знаком =====
+    .patent-block {
+        background: rgba($color-green, 0.05);
+        border-left: 4px solid $color-green;
+        border-radius: 16px;
+        padding: 30px;
+        margin: 20px 0;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        &__logo {
+            text-align: center;
+            
+            img {
+                width: clamp(12.5rem, 9.1114rem + 15.0602vw, 18.75rem);
+                height: auto;
+            }
+        }
+
+        &__text {
+            h3 {
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+            
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        &__image {
+            margin-top: 25px;
+            text-align: center;
+            
+            img {
+                width: clamp(16.25rem, 11.506rem + 21.0843vw, 25rem);
+                height: auto;
+                border: 1px solid rgba($color-gray-dark, 0.2);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    // ===== Блок с преимуществами =====
+    .advantages-block {
+        margin: 20px 0;
+        
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+
+    .advantages-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .advantage-card {
+        flex: 1;
+        min-width: 300px;
+        background: $color-white;
+        border-radius: 20px;
+        padding: 24px 20px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba($color-gray-dark, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        &__image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            background: rgba($color-green, 0.2);  // ← лёгкий зелёный фон
+            border-radius: 50%;                    // ← круглая подложка
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: $color-green;
+        }
+    }
+}
+
+// ============================================
+// АДАПТИВ
+// ============================================
+
+@media (max-width: 768px) {
+    .technology-page {
+        gap: 0px;
+
+        h3 {
+            font-size: 22px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        // Патентный блок на мобилках
+        .patent-block {
+            padding: 20px;
+        }
+
+        // Преимущества — в колонку
+        .advantages-flex {
+            flex-direction: column;
+            gap: 10px;
+            margin: 0;
+        }
+
+        // .advantage-card {
+        //     flex: 1 1 100%;
+        //     margin: 0;
+        //     padding: 20px;
+            
+        //     &__image {
+        //         width: 60px;
+        //         height: 60px;
+        //     }
+        // }
+    }
+}

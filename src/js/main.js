@@ -9,6 +9,7 @@ import './components/copy-to-clipboard.js';
 import './components/projects-render.js';
 import './components/patents-render.js';
 import './components/gallery-render.js';
+import './components/partners-render.js';
 
 import './modules/modal.js';
 import './modules/cookies.js';

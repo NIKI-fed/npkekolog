@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Водоподготовка | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <!-- <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin> -->
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>Промышленная водоподготовка</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/technologies/technologies_2.jpg" alt="Водоподготовка">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/technologies_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    <div class="subsection__about">
+                        <div class="subsection__about-text">
+                            <p>ООО «НПК ЭКОЛОГ» предлагает полный цикл услуг по водоподготовке — от разработки технологической схемы до подбора и поставки оборудования. Мы учитываем исходный состав воды, требования заказчика и нормативные показатели, чтобы предложить оптимальное решение.</p>
+                            <p>Компания изготавливает станции водоподготовки в блочно-модульном исполнении на базе 20- и 40-футовых контейнеров. Такое решение позволяет быстро развернуть систему водоподготовки на любой площадке, минимизировать затраты на строительство и сократить сроки ввода в эксплуатацию.</p>
+                            <p>Все контейнеры оснащены обшивкой, крышей, лестницей для безопасного обслуживания, внутренним утеплением, системой вентиляции и отоплением. Такая комплектация обеспечивает работоспособность оборудования в любых климатических условиях.</p>
+                            <p>Возможна любая степень автоматизации — от ручного управления до полностью автономной работы с дистанционным контролем и телеметрией. Это позволяет заказчику выбрать оптимальный баланс между стоимостью и удобством обслуживания.</p>
+                        </div>
+                    </div>
+                    <!-- КОНЕЦ уникального куска -->
+                    
+                </div>
+            </section>
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

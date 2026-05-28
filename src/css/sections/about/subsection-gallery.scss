@@ -23,10 +23,14 @@
         }
     }
 
-    &__patents, &__gallery {
+    &__patents, &__gallery, &__partners {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 30px;
+    }
+
+    &__partners {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
 
@@ -57,6 +61,10 @@
 
         &-bg {
             height: clamp(11.25rem, 1.0843rem + 45.1807vw, 30rem);
+        }
+
+        &-small {
+            height: 100px;
         }
         
         img {

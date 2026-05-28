@@ -4,11 +4,13 @@
 
 .objects {
     width: 100%;
-    max-width: 100%;
-    margin: auto;
+    // max-width: 100%;
+    // margin: auto;
 }
 
 .objects__inner {
+    max-width: 1200px;
+    margin: auto;
     padding: 50px;
     text-align: center;
 }
@@ -37,11 +39,11 @@
 
 .objects__map {
     margin: 50px auto 0;
-    width: 980px;
+    width: 100%;
 }
 
 .objects__map-img {
-    width: 100% !important;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -88,7 +90,7 @@
     }
     
     .objects__map {
-        width: clamp(21.25rem, 4.8864rem + 72.7273vw, 61.25rem);
+        // width: clamp(21.25rem, 4.8864rem + 72.7273vw, 61.25rem);
         margin: clamp(0.625rem, -0.3977rem + 4.5455vw, 3.125rem) auto 0;
     }
 
