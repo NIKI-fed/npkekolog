@@ -12,7 +12,7 @@ function renderGalleryPartners() {
     const partnersHTML = data.map(item => `
 
         <div class="gallery-card">
-            <div class="gallery-card__image gallery-card__image-small">
+            <div class="gallery-card__image gallery-card__image-small" style="cursor: default;">
                 <img src="${item.img}" alt="${item.alt}">
             </div>
         </div>

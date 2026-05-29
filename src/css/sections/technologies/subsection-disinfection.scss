@@ -44,11 +44,26 @@
             text-align: center;
             
             img {
-                // width: clamp(16.25rem, 2.3569rem + 61.747vw, 41.875rem);
                 max-width: 100%;
                 height: auto;
                 border-radius: 16px;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        &__caption {
+            margin-top: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: $color-gray-dark;
+            text-align: center;
+            background: rgba($color-gray-dark, 0.05);
+            padding: 12px 16px;
+            border-radius: 12px;
+            
+            strong {
+                color: $color-green;
+                font-weight: 600;
             }
         }
     }
@@ -137,8 +152,8 @@
             width: 150px;
             height: 150px;
             margin: 0 auto 15px;
-            background: rgba($color-green, 0.2);  // ← лёгкий зелёный фон
-            border-radius: 50%;                    // ← круглая подложка
+            background: rgba($color-green, 0.2);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -157,6 +172,119 @@
 
         strong {
             color: $color-green;
+        }
+    }
+
+    // ===== Детальное описание преимуществ =====
+    .tech-details {
+        margin-bottom: 20px;
+        
+        &__item {
+            background: $color-white;
+            border-radius: 20px;
+            padding: 24px;
+            // margin-bottom: 24px;
+            border: 1px solid rgba($color-gray-dark, 0.1);
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: translateX(5px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+            
+            h4 {
+                font-size: 18px;
+                font-weight: 600;
+                color: $color-green;
+                margin-bottom: 16px;
+                line-height: 1.6;
+            }
+            
+            p {
+                font-size: 15px;
+                line-height: 1.5;
+                color: $color-gray-dark;
+                margin-bottom: 12px;
+            }
+            
+            &--highlight {
+                background: rgba($color-green, 0.05);
+                border-left: 4px solid $color-green;
+                
+                .tech-details__accent {
+                    color: $color-green;
+                    font-weight: 600;
+                    margin-top: 16px;
+                    margin-bottom: 0;
+                    padding-top: 12px;
+                    border-top: 1px solid rgba($color-green, 0.2);
+                }
+            }
+        }
+    }
+
+    // ===== Сравнительная таблица =====
+    .comparison-table {
+        margin: 0px 0 20px;
+        
+        h3 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid rgba($color-gray-dark, 0.1);
+            background: $color-white;
+        }
+        
+        &__grid {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 600px;
+            
+            th, td {
+                padding: 14px 12px;
+                text-align: center;
+                border-bottom: 1px solid rgba($color-gray-dark, 0.1);
+                vertical-align: middle;
+            }
+            
+            th {
+                background: rgba($color-green, 0.08);
+                font-weight: 600;
+                color: $color-header-footer;
+                font-size: 13px;
+                
+                &.highlight-col {
+                    background: rgba($color-green, 0.15);
+                    color: $color-green;
+                    font-weight: 700;
+                }
+            }
+            
+            td {
+                color: $color-gray-dark;
+                
+                &.highlight-cell {
+                    background: rgba($color-green, 0.08);
+                    color: $color-green;
+                    font-weight: 700;
+                }
+            }
+            
+            tr:last-child td {
+                border-bottom: none;
+            }
+        }
+        
+        .table-caption {
+            font-size: 12px;
+            color: rgba($color-gray-dark, 0.7);
+            text-align: center;
+            margin-top: 12px;
         }
     }
 }
@@ -189,15 +317,32 @@
             margin: 0;
         }
 
-        // .advantage-card {
-        //     flex: 1 1 100%;
-        //     margin: 0;
-        //     padding: 20px;
+        // Детальное описание
+        .tech-details {
+            &__item {
+                padding: 18px;
+                
+                h4 {
+                    font-size: 16px;
+                }
+                
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        // Сравнительная таблица
+        .comparison-table {
+            margin: 30px 0;
             
-        //     &__image {
-        //         width: 60px;
-        //         height: 60px;
-        //     }
-        // }
+            &__grid {
+                font-size: 12px;
+                
+                th, td {
+                    padding: 10px 8px;
+                }
+            }
+        }
     }
 }

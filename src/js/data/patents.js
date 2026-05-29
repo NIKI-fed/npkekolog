@@ -1,7 +1,7 @@
 export const patents = [
     {
         id: 1,
-        img: '/assets/images/patents/patents_1.jpg',
+        img: '/assets/images/about/patents/patents_1.jpg',
         alt: 'Патент №1',
         number: 'Патент № 2405066',
         title: 'Электрохимический способ получения гипохлорита натрия',
@@ -10,7 +10,7 @@ export const patents = [
     },
     {
         id: 2,
-        img: '/assets/images/patents/patents_2.jpg',
+        img: '/assets/images/about/patents/patents_2.jpg',
         alt: 'Патент №2',
         number: 'Патент № 2361966',
         title: 'Способ проведения электролиза водного раствора соли',
@@ -19,7 +19,7 @@ export const patents = [
     },
     {
         id: 3,
-        img: '/assets/images/patents/patents_3.jpg',
+        img: '/assets/images/about/patents/patents_3.jpg',
         alt: 'Патент №3',
         number: 'Патент № 158779',
         title: 'Устройство для обеззараживания воды',
@@ -28,7 +28,7 @@ export const patents = [
     },
     {
         id: 4,
-        img: '/assets/images/patents/patents_4.jpg',
+        img: '/assets/images/about/patents/patents_4.jpg',
         alt: 'Патент №4',
         number: 'Патент № 58539',
         title: 'Установка для проведения водного раствора соли',
@@ -37,7 +37,7 @@ export const patents = [
     },
     {
         id: 5,
-        img: '/assets/images/patents/patents_5.jpg',
+        img: '/assets/images/about/patents/patents_5.jpg',
         alt: 'Патент №5',
         number: 'Патент № 2125120',
         title: 'Способ проведения электролиза водного раствора соли',
@@ -46,7 +46,7 @@ export const patents = [
     },
     {
         id: 6,
-        img: '/assets/images/patents/patents_6.jpg',
+        img: '/assets/images/about/patents/patents_6.jpg',
         alt: 'Патент №6',
         number: 'Евразийский патент № 001666',
         title: 'Способ проведения электролиза водного раствора соли',
