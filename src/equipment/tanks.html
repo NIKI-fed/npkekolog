@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Ёмкостное оборудование | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>Ёмкостное оборудование</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/equipment/tanks.jpg" alt="Ёмкостное оборудование">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/equipment_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    <div class="subsection__about">
+                        <div class="subsection__about-text">
+                            <p>Специалисты ООО «НПК ЭКОЛОГ» помогут подобрать оптимальное решение по ёмкостному оборудованию для станции приготовления, хранения и дозирования гипохлорита натрия. Мы учитываем объём производства реагента, периодичность его расхода, особенности площадки и требования к безопасности.</p>
+                            <p>В зависимости от задач и бюджета заказчика возможна реализация различных решений. Применяются как бетонные ёмкости с футеровкой химически стойкими покрытиями (для больших объёмов и стационарных установок), так и полностью пластиковые химически стойкие ёмкости из полиэтилена низкого давления (ПНД), поливинилхлорида (ПВХ) либо стеклопластика.</p>
+                            <p>Пластиковые ёмкости обладают рядом преимуществ: они устойчивы к коррозии, не требуют дополнительной антикоррозийной защиты, легки в монтаже и обслуживании. Стеклопластиковые ёмкости отличаются повышенной механической прочностью и могут использоваться при высоких нагрузках.</p>
+                            <p>ООО «НПК ЭКОЛОГ» работает с ведущими производителями пластиковых ёмкостей, поэтому мы уверены в качестве поставляемой продукции. Всё оборудование прошло апробацию временем и зарекомендовало себя с самой лучшей стороны на объектах водоподготовки по всей России.</p>
+                            <p>При проектировании ёмкостного парка мы предусматриваем необходимую оснастку: датчики уровня, системы перемешивания, обвязку трубопроводами, узлы ввода и вывода реагента, а также защиту от перелива и аварийные ёмкости. Все элементы интегрируются в общую систему автоматизации станции.</p>
+                        </div>
+                    </div>
+                    <!-- КОНЕЦ уникального куска -->
+                    
+                </div>
+            </section>
+
+            <!-- Форма перед футером "Не нашли подходящего оборудования" -->
+            <include file="partials/form-footer.html"></include>
+            
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

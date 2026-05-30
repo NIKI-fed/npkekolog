@@ -86,7 +86,7 @@
 }
 
 .activity__card:nth-child(2)::before {
-    background-image: url('../../assets/backgrounds/5.jpg');
+    background-image: url('/assets/backgrounds/5.jpg');
 }
 
 /* 3-я карточка (правая) - без анимации по умолчанию */
@@ -96,7 +96,7 @@
 }
 
 .activity__card:nth-child(3)::before {
-    background-image: url('../../assets/backgrounds/6.jpg');
+    background-image: url('/assets/backgrounds/6.jpg');
 }
 
 /* ========== АНИМАЦИИ ПРИ ПОЯВЛЕНИИ ========== */

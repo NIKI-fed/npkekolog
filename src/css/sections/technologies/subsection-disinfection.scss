@@ -289,6 +289,67 @@
     }
 }
 
+// ===== Сравнение технологических подходов =====
+.tech-comparison {
+    h3 {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    
+    .table-wrapper {
+        overflow-x: auto;
+        border-radius: 20px;
+        border: 1px solid rgba($color-gray-dark, 0.1);
+        background: $color-white;
+    }
+    
+    .comparison-table__grid {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        min-width: 500px;
+        
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba($color-gray-dark, 0.1);
+            vertical-align: top;
+        }
+        
+        th {
+            background: rgba($color-green, 0.08);
+            font-weight: 600;
+            color: $color-header-footer;
+            text-align: center;
+            
+            &.highlight-col {
+                background: rgba($color-green, 0.15);
+                color: $color-green;
+                font-weight: 700;
+            }
+        }
+        
+        td {
+            color: $color-gray-dark;
+            
+            &:first-child {
+                font-weight: 600;
+                background: rgba($color-gray-dark, 0.02);
+            }
+            
+            &.highlight-cell {
+                background: rgba($color-green, 0.05);
+                color: $color-green;
+                font-weight: 500;
+            }
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+}
+
 // ============================================
 // АДАПТИВ
 // ============================================

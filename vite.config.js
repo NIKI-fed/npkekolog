@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import htmlInclude from 'vite-plugin-html-include'
 
 export default defineConfig({
+    base: '/test/',  // только для теста на хостинге, чтобы обращения к файлам шли в папку npkekolog/test на хостинге, а не в корневую папку
     plugins: [htmlInclude()],
     root: 'src',
     server: {
@@ -28,17 +29,17 @@ export default defineConfig({
                 
                 // Оборудование и подстраницы
                 equipment: 'src/equipment/index.html',
-                // 'equipment-electrolysis': 'src/equipment/electrolysis.html',
-                // 'equipment-pumps': 'src/equipment/pumps.html',
-                // 'equipment-tanks': 'src/equipment/tanks.html',
-                // 'equipment-wastewater': 'src/equipment/wastewater.html',
+                'equipment-electrolysis': 'src/equipment/electrolysis.html',
+                'equipment-pumps': 'src/equipment/pumps.html',
+                'equipment-tanks': 'src/equipment/tanks.html',
+                'equipment-wastewater': 'src/equipment/wastewater.html',
                 
                 // Услуги и подстраницы
                 services: 'src/services/index.html',
-                // 'services-development': 'src/services/development.html',
-                // 'services-design': 'src/services/design.html',
-                // 'services-installation': 'src/services/installation.html',
-                // 'services-maintenance': 'src/services/maintenance.html',
+                'services-development': 'src/services/development.html',
+                'services-design': 'src/services/design.html',
+                'services-installation': 'src/services/installation.html',
+                'services-maintenance': 'src/services/maintenance.html',
                 
                 // О компании и подстраницы
                 about: 'src/about/index.html',
@@ -47,7 +48,7 @@ export default defineConfig({
                 'about-awards': 'src/about/awards.html',
                 'about-reviews': 'src/about/reviews.html',
                 'about-partners': 'src/about/partners.html',
-                'about-partners': 'src/about/details.html',
+                'about-details': 'src/about/details.html',
                 'about-additions': 'src/about/additions.html',
 
                 // Выполненные проекты

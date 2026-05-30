@@ -11,7 +11,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
         <link rel="manifest" href="/assets/favicons/site.webmanifest" />
 
-        <!-- <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin> -->
+        <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="stylesheet" href="/css/main.scss">
     </head>
 
@@ -169,19 +169,70 @@
                             <p class="table-caption">* Данные основаны на результатах лабораторных исследований ЗАО "ЦИКВ". Протокол № 1-1197/13 от 07.08.2013</p>
                         </div>
 
-                        <!-- 5. Блок сравнения технологий (можно реализовать позже) -->
-                        <!-- 
-                        <div class="comparison-block">
-                            <h3>Сравнение технологий</h3>
-                            ...
+                        <!-- 7. Сравнение технологических подходов -->
+                        <div class="tech-comparison">
+                            <h3>Сравнение технологических подходов</h3>
+                            <div class="table-wrapper">
+                                <table class="comparison-table__grid">
+                                    <thead>
+                                        <tr>
+                                            <th>Параметр</th>
+                                            <th>Проточная технология электролиза</th>
+                                            <th class="highlight-col">Технология электролиза ООО «НПК&nbsp;ЭКОЛОГ»</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Соль</td>
+                                            <td>Только соль класса экстра</td>
+                                            <td class="highlight-cell">Любая пищевая соль</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Загрузка соли</td>
+                                            <td>Ежедневная</td>
+                                            <td class="highlight-cell">Раз в месяц</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Концентрация солевого раствора</td>
+                                            <td>Требует поддержания</td>
+                                            <td class="highlight-cell">Не требует поддержания</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Подогрев солевого раствора</td>
+                                            <td>Требуется</td>
+                                            <td class="highlight-cell">Не требуется</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Охлаждение гипохлорита</td>
+                                            <td>Требуется</td>
+                                            <td class="highlight-cell">Не требуется</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Промывка электролизёров</td>
+                                            <td>Раз в месяца и чаще</td>
+                                            <td class="highlight-cell">Раз в 4 месяцев</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Умягчение и декарбонизация воды</td>
+                                            <td>Требуется</td>
+                                            <td class="highlight-cell">Не требуется</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        -->
+
+
                     </div>
                     
                     <!-- КОНЕЦ уникального куска -->
                     
                 </div>
             </section>
+
+            <!-- Форма перед футером "Не нашли подходящего оборудования" -->
+            <include file="partials/form-footer.html"></include>
+            
         </main>
 
         <!-- Карта сайта (выпадающая панель сверху) -->

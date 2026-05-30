@@ -9,7 +9,7 @@
     &__inner {
         max-width: 1640px;
         margin: auto;
-        padding: 50px;
+        padding: 20px 50px 50px;
         text-align: center;
 
         & h2 {
@@ -42,7 +42,7 @@
         justify-content: center;
         gap: 30px;
         flex-wrap: wrap;
-        padding-top: 50px;
+        padding-top: 20px;
         list-style: none;
         margin: 0;
     }

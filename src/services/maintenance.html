@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Сервисное обслуживание | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>Сервисное обслуживание</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/services/services_1.jpg" alt="Водоподготовка">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/services_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    <div class="subsection__about">
+                        <div class="subsection__about-text">
+                            <p>ООО&nbsp;«НПК&nbsp;ЭКОЛОГ» оказывает полный комплекс услуг по сервисному ремонту и обслуживанию электролизного оборудования. Мы обеспечиваем бесперебойную работу станций на всех этапах их жизненного цикла — от ввода в эксплуатацию до регламентного сервисного обслуживания.</p>
+                            <p>Сервисное обслуживание включает в себя как гарантийное, так и постгарантийное сопровождение поставляемого оборудования. В течение гарантийного срока мы оперативно устраняем любые неисправности, заменяем вышедшие из строя компоненты и проводим профилактические работы.</p>
+                            <p>После истечения гарантийного срока мы предлагаем заключение договора на постгарантийное обслуживание. В рамках такого договора проводятся регулярные профилактические осмотры, диагностика оборудования, замена расходных материалов, калибровка датчиков и систем автоматики.</p>
+                            <p>Специалисты ООО&nbsp;«НПК&nbsp;ЭКОЛОГ» готовы провести диагностические работы с целью последующей модернизации уже работающих систем. Мы анализируем текущее состояние оборудования, выявляем «узкие места» и предлагаем решения по повышению надёжности, энергоэффективности и степени автоматизации.</p>
+                            <p>Возможна модернизация систем управления, замена устаревших узлов на более современные, интеграция дополнительных функций и устройств. Наша цель — продлить срок службы оборудования, снизить эксплуатационные затраты и повысить безопасность технологического процесса.</p>
+                        </div>
+                    </div>
+                    <!-- КОНЕЦ уникального куска -->
+                    
+                </div>
+            </section>
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Очистка сточных вод | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>Очистка сточных вод</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/equipment/wastewater.jpg" alt="Очистка сточных вод">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/equipment_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    <div class="subsection__about">
+                        <div class="subsection__about-text">
+                            <p>ООО&nbsp;«НПК&nbsp;ЭКОЛОГ» предлагает реализацию разработанных технологических цепочек в блочно-модульном исполнении на базе 20- и 40-футовых контейнеров. Такое решение позволяет значительно сократить сроки строительства, минимизировать затраты на возведение капитальных сооружений и обеспечить высокую заводскую готовность оборудования.</p>
+                            <p>Контейнеры имеют полную заводскую комплектацию: обшивку и крышу, наружную лестницу для безопасного обслуживания, внутреннее утепление для работы в любых климатических условиях, а также системы вентиляции и отопления. Производится точная привязка контейнерной станции к местности с учётом рельефа, подъездных путей и инженерных коммуникаций.</p>
+                            <p>Все применяемое оборудование имеет действующие разрешительные документы и допуски к эксплуатации на территории Российской Федерации. Возможна любая степень автоматизации — от частичного контроля до полностью автономной работы с функцией дистанционного мониторинга и управления.</p>
+                            <p>В каждом контейнерном блоке могут быть предусмотрены следующие технологические узлы:</p>
+                            <ul>
+                                <li>насосная станция (подпорные насосы, насосы-дозаторы, рециркуляционные насосы);</li>
+                                <li>станция приготовления реагента (ёмкости растворения, узлы ввода соли и воды, электролизные установки);</li>
+                                <li>ёмкость хлопьеобразования (при необходимости в схемах реагентной очистки);</li>
+                                <li>фильтры механической очистки (песчаные, угольные, сетчатые);</li>
+                                <li>система автоматического управления (САУ) на базе промышленного контроллера с возможностью удалённого доступа.</li>
+                            </ul>
+                            <p>Кроме того, контейнерная станция может быть оснащена общим электрическим вводом, шкафом автоматического ввода резерва (АВР) и центральной системой управления, размещёнными в отдельном техническом блоке. Это обеспечивает повышенную надёжность энергоснабжения и удобство эксплуатации.</p>
+                        </div>
+                    </div>
+                    <!-- КОНЕЦ уникального куска -->
+                    
+                </div>
+            </section>
+
+            <!-- Форма перед футером "Не нашли подходящего оборудования" -->
+            <include file="partials/form-footer.html"></include>
+            
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

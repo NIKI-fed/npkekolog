@@ -11,9 +11,11 @@
 
 .header__page {
     position: sticky;
+    top: 0;
+    left: 0;
     background-color: $color-header-footer;
     width: 100%;
-    z-index: 3;
+    z-index: 4;
     padding-block: 30px;
 }
 
@@ -195,7 +197,13 @@
     }
 }
 
-@media (max-width: 600px) {
+    @media (max-width: 768px) {
+        .header__page {
+            position: relative;
+        }
+    }
+    @media (max-width: 600px) {
+
     .header__container {
         flex-direction: column;
         gap: 15px;

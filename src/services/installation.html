@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Монтажные и пуско-наладочные работы | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>Монтажные и пуско-наладочные работы</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/services/services_3.jpg" alt="Водоподготовка">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/services_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    <div class="subsection__about">
+                        <div class="subsection__about-text">
+                            <p>ООО «НПК ЭКОЛОГ» выполняет полный спектр услуг по монтажу и пуско-наладочным работам электролизного оборудования. Наши специалисты имеют необходимые допуски и многолетний опыт, что позволяет нам выполнять работы любой сложности в установленные сроки.</p>
+                            <p>Монтаж оборудования осуществляется в строгом соответствии с проектной документацией и требованиями нормативных актов. При монтаже учитываются особенности конкретной площадки, удобство обслуживания и безопасность персонала.</p>
+                            <p>После завершения монтажных работ проводится комплекс пуско-наладочных мероприятий. Наши инженеры проверяют работоспособность всех узлов и систем, настраивают параметры электролиза, дозирования реагентов, контрольно-измерительных приборов и автоматики.</p>
+                            <p>В процессе пусконаладки осуществляется пробный пуск станции, отработка режимов работы при различных нагрузках, калибровка оборудования и доведение параметров до проектных значений. Проводятся контрольные замеры качества получаемого гипохлорита натрия.</p>
+                            <p>Профессиональная компетенция специалистов нашей организации гарантирует высокое качество работ в кратчайшие сроки. Мы сопровождаем запуск станции до момента её устойчивой работы в штатном режиме, обучаем персонал заказчика и передаём всю необходимую техническую документацию.</p>
+                        </div>
+                    </div>
+                    <!-- КОНЕЦ уникального куска -->
+                    
+                </div>
+            </section>
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

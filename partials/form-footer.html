@@ -1,0 +1,51 @@
+<!-- Форма "Не нашли подходящего оборудования" -->
+<section class="form-footer">
+    <div class="form-footer__bg"></div>
+    <div class="form-footer__deco form-footer__deco--corner-1"></div>
+    <div class="form-footer__deco form-footer__deco--corner-2"></div>
+    
+    <div class="form-footer__container">
+        <div class="form-footer__content">
+            <h2 class="form-footer__title">НЕ НАШЛИ ПОДХОДЯЩЕГО ОБОРУДОВАНИЯ?</h2>
+            <p class="form-footer__subtitle">Поможем подобрать оборудование индивидуально</p>
+            
+            <form id="footer-custom-form" class="form-footer__form">
+                <div class="form-footer__grid">
+                    <!-- Левая колонка -->
+                    <div class="form-footer__col">
+                        <div class="form-footer__field">
+                            <label for="form-name" class="form-footer__label">Контактное лицо</label>
+                            <input type="text" id="form-name" name="name" class="form-footer__input" placeholder="Ваше имя" required>
+                        </div>
+                        
+                        <div class="form-footer__field">
+                            <label for="form-phone" class="form-footer__label">Номер телефона</label>
+                            <input type="tel" id="form-phone" name="phone" class="form-footer__input form-footer__input--phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        
+                        <div class="form-footer__field">
+                            <label for="form-email" class="form-footer__label">E-mail</label>
+                            <input type="email" id="form-email" name="email" class="form-footer__input" placeholder="email (необязательно)">
+                        </div>
+                    </div>
+                    
+                    <!-- Правая колонка -->
+                    <div class="form-footer__col">
+                        <div class="form-footer__field form-footer__field--full">
+                            <label for="form-task" class="form-footer__label">Опишите задачу</label>
+                            <textarea id="form-task" name="task" class="form-footer__textarea" placeholder="Опишите требования к оборудованию..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-footer__footer">
+                    <button type="submit" class="form-footer__btn">ОТПРАВИТЬ</button>
+                    <div class="form-footer__checkbox">
+                        <input type="checkbox" id="form-consent" checked required>
+                        <label for="form-consent">Я соглашаюсь с <a href="/legal/privacy.html" target="_blank">политикой конфиденциальности</a> сайта, и разрешаю хранить мои данные на основе Федерального закона "О персональных данных"</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

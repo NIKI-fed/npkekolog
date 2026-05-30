@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Проектирование | НПК ЭКОЛОГ</title>
+
+        <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+        <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+
+        <link rel="preload" href="/fonts/Montserrat-Variable.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="/css/main.scss">
+    </head>
+
+    <body>
+
+        <main>
+            <!-- Используем партиалы Vite + plugin -->
+            <include file="partials/header_page.html"></include>
+
+            <section class="subsection">
+                <div class="subsection__inner">
+                    <h2>Проектирование</h2>
+                    <div class="subsection__img">
+                        <img src="/assets/images/services/services_2.jpg" alt="Водоподготовка">
+                    </div>
+                </div>
+            </section>
+
+            <section class="subsection">
+                <div class="subsection__inner subsection__common">
+                    <!-- Боковое меню страницы "О компании" -->
+                    <include file="partials/services_list.html"></include>
+
+                    <!-- Уникальный кусок для каждой страницы -->
+                    <div class="subsection__about">
+                        <div class="subsection__about-text">
+                            <p>ООО&nbsp;«НПК&nbsp;ЭКОЛОГ» обладает многолетним опытом взаимодействия с ведущими проектными институтами, которые зарекомендовали себя как надёжные и компетентные партнёры. Мы готовы выполнить работы в области проектирования любой сложности — от небольших объектов водоподготовки до очистных сооружений городского масштаба.</p>
+                            <p>Проектирование электролизных станций — это сложный и ответственный этап, от которого зависит эффективность и безопасность будущей системы. Наши специалисты учитывают все нюансы: исходный состав воды, требуемую производительность, климатические условия, особенности площадки и пожелания заказчика.</p>
+                            <p>Мы разрабатываем детальные проектные решения, включающие технологическую часть, электрические схемы, системы автоматизации и контроля, а также планировочные решения для размещения оборудования. Каждый проект проходит согласование с заказчиком и при необходимости корректируется с учётом замечаний.</p>
+                            <p>Благодаря наработанным связям с проектными институтами, мы можем оперативно привлекать узкопрофильных специалистов для решения нестандартных задач. Это позволяет нам гарантировать высокое качество проектных работ и соблюдение согласованных сроков.</p>
+                            <p>Результатом нашей работы является полный пакет проектной документации, готовой для передачи в строительно-монтажные организации и последующей реализации. Мы сопровождаем проект на всех стадиях — от эскизного проектирования до авторского надзора за строительством и пусконаладкой.</p>
+                        </div>
+                    </div>
+                    <!-- КОНЕЦ уникального куска -->
+                    
+                </div>
+            </section>
+        </main>
+
+        <!-- Карта сайта (выпадающая панель сверху) -->
+        <include file="partials/sitemap.html"></include>
+        <!-- Cookies-уведомление -->
+        <include file="partials/cookies_notification.html"></include>
+        <!-- Модальное окно -->
+        <include file="partials/modal.html"></include>
+        <!-- Футер -->
+        <include file="partials/footer.html"></include>
+
+        <script type="module" src="/js/main.js"></script>
+
+    </body>
+</html>

@@ -1,24 +1,29 @@
-// ========== ОТПРАВКА ФОРМЫ ==========
-const form = document.getElementById('callback-form');
-const phoneInput = document.querySelector('#callback-form input[type="tel"]');
-const nameInput = document.querySelector('#callback-form input[name="name"]');
-const consentCheckbox = document.querySelector('#callback-form #consent');
-const submitBtn = document.querySelector('#callback-form button[type="submit"]');
-const modalBody = document.getElementById('modal-body');
-const modalSuccess = document.getElementById('modal-success');
+import { getPhoneDigits, isValidEmail } from './form-validation.js';
 
-if (form) {
+export function initFormSubmit(formId, modalBodyId, modalSuccessId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    
+    const modalBody = modalBodyId ? document.getElementById(modalBodyId) : null;
+    const modalSuccess = modalSuccessId ? document.getElementById(modalSuccessId) : null;
+    const modal = document.getElementById('modal');
+    
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Дополнительная проверка перед отправкой (на случай, если кнопка стала активной по ошибке)
+        const nameInput = form.querySelector('input[name="name"]');
+        const phoneInput = form.querySelector('input[type="tel"]');
+        const emailInput = form.querySelector('input[type="email"]');
+        const consentCheckbox = form.querySelector('input[type="checkbox"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
         const name = nameInput?.value.trim() || '';
         const phone = phoneInput?.value || '';
-        const digits = phone.replace(/\D/g, '');
+        const digits = getPhoneDigits(phone);
+        const email = emailInput?.value.trim() || '';
         const isConsentChecked = consentCheckbox?.checked || false;
         
-        // Если форма невалидна — подсвечиваем проблемные поля и выходим
-        if (name.length < 2 || digits.length !== 11 || !isConsentChecked) {
+        if (name.length < 2 || digits.length !== 11 || !isValidEmail(email) || !isConsentChecked) {
             if (phoneInput && digits.length !== 11) {
                 phoneInput.classList.add('input-error');
                 phoneInput.focus();
@@ -27,56 +32,52 @@ if (form) {
                 nameInput.classList.add('input-error');
                 if (!phoneInput || digits.length === 11) nameInput.focus();
             }
+            if (emailInput && email && !isValidEmail(email)) {
+                emailInput.classList.add('input-error');
+            }
             return;
         }
         
-        // Убираем подсветку, если всё ок
         phoneInput?.classList.remove('input-error');
         nameInput?.classList.remove('input-error');
+        emailInput?.classList.remove('input-error');
+
+        // Получаем текущий URL страницы
+        const pageUrl = window.location.href;
         
         const formData = new FormData(form);
+        formData.append('form_type', formId);
+        formData.append('page_url', pageUrl);
+
+        // =========АДРЕС БЭКА=========
+
+        const BACKEND_URL = '/test/send-mail.php';
+
+        // ===========================
         
-        // ⚠️ ЗАМЕНИТЬ НА URL БЭКА
-        const BACKEND_URL = 'https://ваш-бэк.ру/api/send';
-        
-        // Блокируем кнопку на время отправки, чтобы не было двойных запросов
         if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Отправка...';
         }
         
         try {
-            const response = await fetch(BACKEND_URL, {
-                method: 'POST',
-                body: formData
-            });
+            const response = await fetch(BACKEND_URL, { method: 'POST', body: formData });
             
             if (response.ok) {
-                // Показываем сообщение об успехе
+                // Открываем модальное окно и показываем успех
+                if (modal) modal.classList.add('active');
                 if (modalBody) modalBody.style.display = 'none';
-                if (modalSuccess) modalSuccess.style.display = 'block';
+                if (modalSuccess) modalSuccess.style.display = 'flex';
                 
-                // Очищаем форму
                 form.reset();
                 if (phoneInput) phoneInput.value = '';
                 
-                // Пересчитываем валидацию (кнопка станет неактивной)
-                // Вызываем события, чтобы триггернуть валидацию
-                if (nameInput) {
-                    const inputEvent = new Event('input');
-                    nameInput.dispatchEvent(inputEvent);
-                }
-                if (consentCheckbox) {
-                    const changeEvent = new Event('change');
-                    consentCheckbox.dispatchEvent(changeEvent);
-                }
-                if (phoneInput) {
-                    const inputEvent = new Event('input');
-                    phoneInput.dispatchEvent(inputEvent);
-                }
+                // Триггерим валидацию для обновления кнопки
+                if (nameInput) nameInput.dispatchEvent(new Event('input'));
+                if (consentCheckbox) consentCheckbox.dispatchEvent(new Event('change'));
+                if (phoneInput) phoneInput.dispatchEvent(new Event('input'));
             } else {
                 alert('Ошибка отправки. Попробуйте позже.');
-                // Возвращаем кнопке активность
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Отправить';
@@ -84,7 +85,6 @@ if (form) {
             }
         } catch (error) {
             alert('Ошибка соединения. Проверьте интернет.');
-            // Возвращаем кнопке активность
             if (submitBtn) {
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Отправить';
