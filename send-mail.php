@@ -41,7 +41,7 @@ $html = '<!DOCTYPE html>
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
         .header { background: #006259; padding: 20px; color: white; text-align: center; }
         .content { padding: 20px; }
-        .field { margin-bottom: 15px; }
+        .field { margin-bottom: 5px; }
         .label { font-weight: bold; color: #006259; }
         .footer { background: #f5f5f5; padding: 15px; text-align: center; font-size: 12px; }
     </style>

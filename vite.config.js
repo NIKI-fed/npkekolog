@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import htmlInclude from 'vite-plugin-html-include'
 
 export default defineConfig({
-    base: '/test/',  // только для теста на хостинге, чтобы обращения к файлам шли в папку npkekolog/test на хостинге, а не в корневую папку
+    //base: '/test/',  // только для теста на хостинге, чтобы обращения к файлам шли в папку npkekolog/test на хостинге, а не в корневую папку
     plugins: [htmlInclude()],
     root: 'src',
     server: {
