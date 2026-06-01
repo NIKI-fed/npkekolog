@@ -11,13 +11,13 @@
 /* Основные секции главной страницы */
 @use 'sections/hero';
 @use 'sections/activity';
-@use 'sections/objects';
 @use 'sections/projects-page';
-@use 'sections/contacts';
+@use 'sections/block_choose-us';
 
 @use 'sections/subsection-common';
 
 @use 'sections/technologies/subsection-disinfection';
+@use 'sections/equipment/subsection-equipment';
 
 @use 'sections/about/subsection-about';
 @use 'sections/about/subsection-contacts';
