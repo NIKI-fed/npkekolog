@@ -11,10 +11,11 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
 

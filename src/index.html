@@ -128,30 +128,24 @@
             <section class="contacts" id="contacts">
                 <div class="contacts__inner">
 
-                    <div class="contacts__map-wrapper">
-                        <iframe class="contacts__map"
+                    <div class="contacts__main-page">
+                        <iframe class="contacts-page__map"
                             src="https://yandex.ru/map-widget/v1/?ll=30.3981,59.9855&z=16&pt=30.3986,59.9852,pm2rdm&scroll=false"
                             frameborder="0"
                             allowfullscreen>
                         </iframe>
                         
                         <!-- Указатель с логотипом поверх карты -->
-                        <div class="contacts__marker">
-                            <img src="/assets/icons/logo_512.png" alt="Локация">
+                        <div class="contacts-page__marker">
+                            <img class="contacts-page__marker-img" src="/assets/icons/logo_512.png" alt="Локация">
                         </div>
                     </div>
 
                     <div class="contacts__description">
                         <h3>Контактная информация:</h3>
-                        <h4>Юридический адрес:</h4>
-                        <p>195271, Россия, г.&nbsp;Санкт-Петербург, Кондратьевский&nbsp;пр.&nbsp;72, литера&nbsp;А, пом.&nbsp;30Н, комн.&nbsp;30</p>
-                        <h4>Почтовый адрес:</h4>
-                        <p>195271, Россия, г.&nbsp;Санкт-Петербург, ул.&nbsp;Замшина&nbsp;27, литера&nbsp;А, корп.&nbsp;1, а/я&nbsp;7</p>
-                        <h4>E-mail:</h4>
-                        <a href="mailto:info@npkekolog.ru">info@npkekolog.ru</a>
-                        <a href="mailto:ekolog_spb@list.ru">ekolog_spb@list.ru</a>
-                        <h4>Телефон:</h4>
-                        <a href="tel:+79111560905">8 (911) 156-09-05</a>
+
+                        <!-- Партиал с контактами -->
+                        <include file="partials/partial_contacts.html"></include>
                     </div>
                 </div>
             </section>
