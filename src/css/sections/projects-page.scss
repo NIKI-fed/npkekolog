@@ -207,12 +207,117 @@
 .objects__map {
     margin: 50px auto 0;
     width: 100%;
+    position: relative;
 }
 
 .objects__map-img {
     width: 100%;
     margin: 0 auto;
 }
+
+// ============ Маркеры на карте ============
+.object_marker {
+    position: absolute;
+    width: clamp(1.3125rem, 0.0597rem + 5.5682vw, 4.375rem); // карта 1100 -> 325 = 3,385 указатель 70px/3.385 -> 21 px
+    opacity: 0;
+    animation: dropMarker 1s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+
+    // Задержки для каждого маркера (создают эффект волны)
+    $delay: 0s;
+    @for $i from 1 through 13 {
+        &:nth-child(#{$i + 1}) { // +1 потому что первый img — это карта
+            animation-delay: $delay;
+            $delay: $delay + 0.1s;
+        }
+    }
+}
+
+// Анимация падения для всех маркеров
+@keyframes dropMarker {
+    0% {
+        opacity: 0;
+        transform: translateY(-250px) scale(0.8);
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(5px) scale(1.05);
+    }
+    55% {
+        transform: translateY(-15px) scale(0.95);
+    }
+    70% {
+        transform: translateY(3px) scale(1.02);
+    }
+    85% {
+        transform: translateY(-5px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.object_marker_1 {
+    top: 31%;
+    left: 16.3%;
+}
+
+.object_marker_2 {
+    top: 36%;
+    left: 14%;
+}
+
+.object_marker_3 {
+    top: 54%;
+    left: 24.5%;
+}
+
+.object_marker_4 {
+    top: 17.5%;
+    left: 35%;
+}
+
+.object_marker_5 {
+    top: 50%;
+    left: 89%;
+}
+
+.object_marker_6 {
+    top: 54%;
+    left: 88%;
+}
+
+.object_marker_7 {
+    top: 60%;
+    left: 78%;
+}
+
+.object_marker_8 {
+    top: 55%;
+    left: 76%;
+}
+
+.object_marker_9 {
+    top: 58%;
+    left: 76%;
+}
+
+.object_marker_10 {
+    top: 58%;
+    left: 71%;
+}
+
+.object_marker_11 {
+    top: 61%;
+    left: 48%;
+}
+
+.object_marker_12 {
+    top: 59%;
+    left: 46%;
+}
+
+// ===========================================
 
 .objects__link {
     display: inline-block;

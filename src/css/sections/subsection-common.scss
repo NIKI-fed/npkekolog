@@ -68,6 +68,10 @@
             font-size: 15px;
             line-height: 1.6;
             color: $color-gray-dark;
+            
+            & ul li {
+                margin-left: 20px;
+            }
         }
     }
 

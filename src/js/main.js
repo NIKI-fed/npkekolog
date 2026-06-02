@@ -1,10 +1,13 @@
 // ========== КОМПОНЕНТЫ (сами навешивают обработчики) ==========
 import './components/site-map.js';
 import './components/hero-slider.js';
-import './components/observer-animation.js';
 import './components/subsection-list.js';
 import './components/viewer.js';
 import './components/copy-to-clipboard.js';
+
+// ========== Анимация при скролле ==========
+import './components/observer_activity.js';
+import './components/observer_map.js';
 
 // Рендеры (сами запускаются при импорте)
 import './components/projects-render.js';
