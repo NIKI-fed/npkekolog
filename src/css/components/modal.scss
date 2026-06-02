@@ -135,30 +135,6 @@
     }
 }
 
-.button {
-    &.btn--primary {
-        background: $color-green;
-        color: $color-white;
-        border: none;
-        border-radius: 40px;
-        padding: 14px 24px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        
-        &:hover:not(:disabled) {
-            background: $color-green;
-            transform: translateY(-2px);
-        }
-        
-        &:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-    }
-}
-
 .modal__success {
     text-align: center;
     

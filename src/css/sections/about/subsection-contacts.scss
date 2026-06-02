@@ -2,21 +2,22 @@
 
 // Блок контакты на главной странице
 .contacts {
-    padding: 50px;
+    // padding: 50px;
     background: #f8f9fa;
 
     &__inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
-        max-width: 1440px;
+        max-width: 1540px;
+        padding: 50px 50px;
         margin: 0 auto;
     }
 
     &__main-page {
         aspect-ratio: 1/1;
         width: 100%;
-        height: clamp(21.25rem, 14.6023rem + 29.5455vw, 37.5rem);
+        height: clamp(20rem, 12.8409rem + 31.8182vw, 37.5rem);
         box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
         border-radius: 20px;
         position: relative;
@@ -53,56 +54,27 @@
 
 /* Адаптив */
 @media (max-width: 1240px) {
-    .contacts {
-        padding: 20px;
-    }
-    
     .contacts__inner {
         grid-template-columns: 1fr;
         gap: 0px;
-        // padding: 10px;
     }
-    
-    // .contacts__map {
-    //     height: 400px;
-    // }
-    
-    // .contacts__marker img {
-    //     width: 50px;
-    // }
 }
 
-// @media (max-width: 992px) {
-//     .contacts {
-//         padding: 40px;
-//     }
-    
-//     .contacts__inner {
-//         gap: 40px;
-//     }
-// }
+@media (max-width: 1024px) {
+    .contacts__inner {
+        padding: 30px 30px;
+    }
+}
 
 @media (max-width: 768px) {
     .contacts {
-        // padding: 30px;
         &__description {
             padding: 10px;
         }
     }
     
     .contacts__inner {
-        // grid-template-columns: 1fr;
-        // gap: 30px;
-    }
-
-
-    
-    // .contacts__map {
-    //     height: 400px;
-    // }
-    
-    .contacts__marker img {
-        width: 50px;
+        padding: 10px;
     }
 }
 

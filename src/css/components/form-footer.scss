@@ -171,15 +171,15 @@
         transition: all 0.3s ease;
         min-width: 240px;
         
-        &:hover {
-            background: rgba($color-accent, 0.8);  // прозрачность 80%
+        &:hover:not(:disabled) {
+            background: rgba($color-accent, 0.8);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         &:disabled {
             opacity: 0.5;
-            cursor: not-allowed;
+            cursor: default;
             transform: none;
         }
     }
