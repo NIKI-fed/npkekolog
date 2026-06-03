@@ -14,6 +14,7 @@ export default defineConfig({
     build: {
         outDir: '../dist',
         emptyOutDir: true,
+        minify: false, // минификация отключена (css и js не сжимаются в одну строку)
         rollupOptions: {
             input: {
                 // Главная
