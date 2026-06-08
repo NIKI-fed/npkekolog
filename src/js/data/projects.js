@@ -1,6 +1,16 @@
 export const projects = [
     {
         id: 16,
+        img: '/assets/images/projects/vladivostok.png',
+        alt: 'Герб Владивостока',
+        object: 'Станция «Горностай», КГУП «Приморский водоканал», г. Владивосток',
+        power: '240 кг в сутки',
+        powerDesc: 'эквивалента активного хлора в гипохлорите',
+        equipment: '2 электролизные установки ЭКВА-5',
+        year: 2025
+    },
+    {
+        id: 15,
         img: '/assets/images/projects/sakhalin.png',
         alt: 'Герб Сахалина',
         object: 'Сахалинская область',
@@ -10,23 +20,13 @@ export const projects = [
         year: 2025
     },
     {
-        id: 15,
+        id: 14,
         img: '/assets/images/projects/novaya_zemlya.png',
         alt: 'Герб Новой Земли',
         object: 'Белушья Губа, архипелаг Новая Земля',
         power: '70 кг в сутки',
         powerDesc: 'эквивалента активного хлора в гипохлорите',
         equipment: 'Электролизная установка ЭКВА-3',
-        year: 2025
-    },
-    {
-        id: 14,
-        img: '/assets/images/projects/vladivostok.png',
-        alt: 'Герб Владивостока',
-        object: 'Станция «Горностай», КГУП «Приморский водоканал», г. Владивосток',
-        power: '240 кг в сутки',
-        powerDesc: 'эквивалента активного хлора в гипохлорите',
-        equipment: '2 электролизные установки ЭКВА-5',
         year: 2025
     },
     {

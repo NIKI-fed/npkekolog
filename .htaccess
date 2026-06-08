@@ -8,3 +8,9 @@ RewriteRule ^(.*)$ $1.html [NC,L]
 # 2. Убираем index.html из адреса (для главной и папок)
 RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+
+# Запрещаем доступ к .env файлам
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>

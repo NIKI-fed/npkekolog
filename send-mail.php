@@ -3,9 +3,22 @@
 // ОБРАБОТЧИК ФОРМ ДЛЯ ОТПРАВКИ ПИСЕМ
 // ============================================
 
-$to_email = 'info@npkekolog.ru';
-$to_name = 'НПК ЭКОЛОГ';
+// ===== ЗАГРУЖАЕМ ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ ИЗ .env =====
+$envFile = dirname(__DIR__) . '/.env'; // Файл на уровень выше (в /www/npkekolog/)
+if (file_exists($envFile)) {
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
+            list($key, $value) = explode('=', $line, 2);
+            putenv(trim($key) . '=' . trim($value));
+        }
+    }
+}
 
+// Получаем пароль из переменной окружения
+$smtpPassword = getenv('SMTP_PASSWORD') ?: '';
+
+// Функция валидации
 function getPostValue($key) {
     return isset($_POST[$key]) ? strip_tags(trim($_POST[$key])) : '';
 }
@@ -33,6 +46,7 @@ switch ($form_type) {
         $subject = 'Новая заявка с сайта';
 }
 
+// Формируем HTML письма
 $html = '<!DOCTYPE html>
 <html>
 <head>
@@ -72,17 +86,42 @@ $text .= "Телефон: {$phone}\n";
 $text .= "Email: {$email}\n";
 if ($task) $text .= "Задача: {$task}\n";
 
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-type: text/html; charset=utf-8',
-    'From: Сайт НПК ЭКОЛОГ <noreply@npkekolog.ru>',
-    'Reply-To: ' . (!empty($email) ? $email : $to_email),
-    'X-Mailer: PHP/' . phpversion()
-];
+// ===== ОТПРАВКА ЧЕРЕЗ SMTP VK WorkMail (с паролем из переменной окружения) =====
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-if (mail($to_email, $subject, $html, implode("\r\n", $headers))) {
+require_once __DIR__ . '/PHPMailer/PHPMailer.php';
+require_once __DIR__ . '/PHPMailer/Exception.php';
+require_once __DIR__ . '/PHPMailer/SMTP.php';
+
+try {
+    $mail = new PHPMailer(true);
+    
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.mail.ru';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'info@npkekolog.ru';
+    $mail->Password   = $smtpPassword;          // ← пароль из переменной окружения
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+    
+    $mail->setFrom('info@npkekolog.ru', 'НПК ЭКОЛОГ');
+    $mail->addAddress('info@npkekolog.ru', 'НПК ЭКОЛОГ');
+    
+    if (!empty($email)) {
+        $mail->addReplyTo($email, $name);
+    }
+    
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+    $mail->Subject = $subject;
+    $mail->Body    = $html;
+    $mail->AltBody = $text;
+    
+    $mail->send();
     echo json_encode(['success' => true, 'message' => 'Сообщение отправлено']);
-} else {
-    echo json_encode(['success' => false, 'message' => 'Ошибка при отправке']);
+    
+} catch (Exception $e) {
+    echo json_encode(['success' => false, 'message' => 'Ошибка при отправке: ' . $mail->ErrorInfo]);
 }
 ?>
