@@ -35,6 +35,11 @@ if (empty($name) || empty($phone)) {
     exit;
 }
 
+if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode(['success' => false, 'message' => 'Введите корректный email']);
+    exit;
+}
+
 switch ($form_type) {
     case 'callback-form':
         $subject = 'Новая заявка с сайта (модальная форма)';
@@ -52,7 +57,7 @@ $html = '<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        body { font-family: Arial, sans-serif; line-height: 1.0; color: #333; }
         .header { background: #006259; padding: 20px; color: white; text-align: center; }
         .content { padding: 20px; }
         .field { margin-bottom: 5px; }

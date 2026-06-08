@@ -51,7 +51,7 @@ export function initFormSubmit(formId, modalBodyId, modalSuccessId) {
 
         // =========АДРЕС БЭКА=========
 
-        const BACKEND_URL = '/test/send-mail.php';
+        const BACKEND_URL = '/send-mail.php';
 
         // ===========================
         
@@ -62,12 +62,14 @@ export function initFormSubmit(formId, modalBodyId, modalSuccessId) {
         
         try {
             const response = await fetch(BACKEND_URL, { method: 'POST', body: formData });
+            const result = await response.json();
             
-            if (response.ok) {
+            if (response.ok && result.success) {
                 // Открываем модальное окно и показываем успех
                 if (modal) modal.classList.add('active');
                 if (modalBody) modalBody.style.display = 'none';
                 if (modalSuccess) modalSuccess.style.display = 'flex';
+                if (submitBtn) submitBtn.textContent = 'Отправить';
                 
                 form.reset();
                 if (phoneInput) phoneInput.value = '';
@@ -76,8 +78,10 @@ export function initFormSubmit(formId, modalBodyId, modalSuccessId) {
                 if (nameInput) nameInput.dispatchEvent(new Event('input'));
                 if (consentCheckbox) consentCheckbox.dispatchEvent(new Event('change'));
                 if (phoneInput) phoneInput.dispatchEvent(new Event('input'));
+
+                return
             } else {
-                alert('Ошибка отправки. Попробуйте позже.');
+                alert(result.message || 'Ошибка отправки. Попробуйте позже.');
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Отправить';
